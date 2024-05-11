@@ -1,5 +1,5 @@
 module control (
-    input [6:0] Instruction6_0,
+    input [31:0] inst,
     output reg Branch,
     output reg MemRead,
     output reg MemtoReg,
@@ -10,7 +10,7 @@ module control (
 );
 
 always @* begin
-    case(Instruction6_0)
+    case(inst[6:0])
         7'b1100011: 
             begin
             Branch = 1'b1; 
