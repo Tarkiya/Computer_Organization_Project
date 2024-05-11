@@ -12,7 +12,7 @@ module top(
     wire [31:0] ALUResult;
     wire zero;
     
-    CpuClk clk1(clkIn,cpuClk);
+    clk_wiz_0 clk1(clkIn,cpuClk);
     ALUControlPort acp (ALUOp,instruction,ALUControl);
     ALU alu (readData1,readData2,imm,ALUSrc,ALUControl,ALUResult);
     
