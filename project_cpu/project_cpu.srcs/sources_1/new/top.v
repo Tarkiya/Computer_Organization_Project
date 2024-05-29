@@ -8,10 +8,10 @@ module top(
     wire [31:0] instAddr;
     wire [3:0]  ALUInst = {inst[30],inst[14:12]};
     
-    wire [31:0] WData;//需要写一个MUX
     wire [31:0] ReadData;
     wire [31:0] ReadData1;
     wire [31:0] ReadData2;
+    wire [31:0] WriteData;
     wire [31:0] imm32;
     
     wire [3:0] ALUControl;
@@ -27,10 +27,13 @@ module top(
     wire RegWrite;
     
     clk_wiz_0 clk1(clkIn,cpuClk);
-    m_inst minst_instance(
+    IFetch uIFetch(
         .clk(cpuClk),
-        .addr(instAddr),
-        .dout(inst)
+        .rst(rst),
+        .imm32(imm32),
+        .branch(Branch),
+        .zero(zero),
+        .inst(inst)
     );
     Controller uContrl (
         .inst(inst[6:0]),  
@@ -47,7 +50,7 @@ module top(
         .rst(rst),
         .inst(inst),
         .regWrite(RegWrite),
-        .writeData(WData),
+        .writeData(WriteData),
         .rs1Data(ReadData1),
         .rs2Data(ReadData2),
         .imm32(imm32)
@@ -63,19 +66,14 @@ module top(
         .ALUResult(ALUResult),
         .zero(zero)
     );
-    m_data mdata_instance(
+    m_data udata(
         .clk(cpuClk),
         .MemRead(MemRead),
         .MemWrite(MemWrite),
-        .addr(ALUResult),
-        .din(ReadData2),
-        .dout(ReadData)
-    );
-    MUX2 mux2(
         .MemtoReg(MemtoReg),
-        .ReadData(ReadData),
         .ALUResult(ALUResult),
-        .WData(WData)
+        .din(ReadData2),
+        .dout(WriteData)
     );
     
 endmodule

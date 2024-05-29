@@ -13,7 +13,7 @@ module IFetch(
             else pc <= pc + 4;
         end
     end
-    prgrom uprgrom(
+    inst_memory uinst(
         .clka(clk),
         .addra(pc>>2),
         .douta(inst)
