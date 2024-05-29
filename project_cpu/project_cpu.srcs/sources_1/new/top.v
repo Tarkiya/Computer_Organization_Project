@@ -1,6 +1,14 @@
 module top(
     input clkIn,
-    input rst
+    input rst,
+    input [7:0] switchLeft,
+    input [7:0] switchRight,
+    input [4:0] button,
+    output [7:0] ledLeft,
+    output [7:0] ledRight,
+    output [7:0] segCtrl,//左侧段选信号
+    output [7:0] segCtrr,//右侧段选信号
+    output [7:0] chipSel//所有片选信号
 );
     wire cpuClk;
     
