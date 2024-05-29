@@ -1,9 +1,9 @@
-module control (
+module Controller (
     input [31:0] inst,
     output reg Branch,
     output reg MemRead,
     output reg MemtoReg,
-    output reg ALUOp,
+    output reg [1:0]ALUOp,
     output reg MemWrite,
     output reg ALUSrc,
     output reg RegWrite
@@ -39,13 +39,23 @@ always @* begin
             ALUOp = 2'b00; 
             MemWrite = 1'b0; 
             ALUSrc = 1'b1; 
-            RegWrite = 1'b1; //I   lw  addi
+            RegWrite = 1'b1; //I    addi
+            end
+        7'b0000011: 
+            begin
+            Branch = 1'b0; 
+            MemRead = 1'b1; 
+            MemtoReg = 1'b1; 
+            ALUOp = 2'b00; 
+            MemWrite = 1'b0; 
+            ALUSrc = 1'b1; 
+            RegWrite = 1'b1; //I   lw
             end
         7'b0100011: 
             begin
             Branch = 1'b0; 
             MemRead = 1'b0; 
-            MemtoReg = 1'b1; 
+            MemtoReg = 1'b0; 
             ALUOp = 2'b00; 
             MemWrite = 1'b1; 
             ALUSrc = 1'b1; 
@@ -79,7 +89,7 @@ always @* begin
             ALUOp = 2'b00; 
             MemWrite = 1'b0; 
             ALUSrc = 1'b0; 
-            RegWrite = 1'b1; //J   jal
+            RegWrite = 1'b1; 
             end
     endcase
 end
