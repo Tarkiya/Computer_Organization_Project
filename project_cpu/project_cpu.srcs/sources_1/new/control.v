@@ -1,6 +1,7 @@
 module Controller (
     input [31:0] inst,
     output reg Branch,
+    
     output reg MemRead,
     output reg MemtoReg,
     output reg [1:0]ALUOp,

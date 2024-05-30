@@ -70,9 +70,6 @@ module segclk_clk_wiz
  (// Clock in ports
   // Clock out ports
   output        clk_out1,
-  // Status and control signals
-  input         reset,
-  output        locked,
   input         clk_in1
  );
   // Input buffering
@@ -116,7 +113,6 @@ wire clk_in2_segclk;
   wire        clkout6_unused;
   wire        clkfbstopped_unused;
   wire        clkinstopped_unused;
-  wire        reset_high;
 
   PLLE2_ADV
   #(.BANDWIDTH            ("OPTIMIZED"),
@@ -156,10 +152,8 @@ wire clk_in2_segclk;
     // Other control and status signals
     .LOCKED              (locked_int),
     .PWRDWN              (1'b0),
-    .RST                 (reset_high));
-  assign reset_high = reset; 
+    .RST                 (1'b0));
 
-  assign locked = locked_int;
 // Clock Monitor clock assigning
 //--------------------------------------
  // Output buffering

@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-// Date        : Thu May 30 15:26:21 2024
-// Host        : LAPTOP-OT4GAFT7 running 64-bit major release  (build 9200)
+// Date        : Thu May 30 17:29:53 2024
+// Host        : LAPTOP-END1HUJS running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/segclk/segclk_sim_netlist.v
+//               E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/segclk/segclk_sim_netlist.v
 // Design      : segclk
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -15,35 +15,23 @@
 (* NotValidForBitStream *)
 module segclk
    (clk_out1,
-    reset,
-    locked,
     clk_in1);
   output clk_out1;
-  input reset;
-  output locked;
   input clk_in1;
 
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire clk_out1;
-  wire locked;
-  wire reset;
 
   segclk_segclk_clk_wiz inst
        (.clk_in1(clk_in1),
-        .clk_out1(clk_out1),
-        .locked(locked),
-        .reset(reset));
+        .clk_out1(clk_out1));
 endmodule
 
 (* ORIG_REF_NAME = "segclk_clk_wiz" *) 
 module segclk_segclk_clk_wiz
    (clk_out1,
-    reset,
-    locked,
     clk_in1);
   output clk_out1;
-  input reset;
-  output locked;
   input clk_in1;
 
   wire clk_in1;
@@ -52,14 +40,13 @@ module segclk_segclk_clk_wiz
   wire clk_out1_segclk;
   wire clkfbout_buf_segclk;
   wire clkfbout_segclk;
-  wire locked;
-  wire reset;
   wire NLW_plle2_adv_inst_CLKOUT1_UNCONNECTED;
   wire NLW_plle2_adv_inst_CLKOUT2_UNCONNECTED;
   wire NLW_plle2_adv_inst_CLKOUT3_UNCONNECTED;
   wire NLW_plle2_adv_inst_CLKOUT4_UNCONNECTED;
   wire NLW_plle2_adv_inst_CLKOUT5_UNCONNECTED;
   wire NLW_plle2_adv_inst_DRDY_UNCONNECTED;
+  wire NLW_plle2_adv_inst_LOCKED_UNCONNECTED;
   wire [15:0]NLW_plle2_adv_inst_DO_UNCONNECTED;
 
   (* BOX_TYPE = "PRIMITIVE" *) 
@@ -131,9 +118,9 @@ module segclk_segclk_clk_wiz
         .DO(NLW_plle2_adv_inst_DO_UNCONNECTED[15:0]),
         .DRDY(NLW_plle2_adv_inst_DRDY_UNCONNECTED),
         .DWE(1'b0),
-        .LOCKED(locked),
+        .LOCKED(NLW_plle2_adv_inst_LOCKED_UNCONNECTED),
         .PWRDWN(1'b0),
-        .RST(reset));
+        .RST(1'b0));
 endmodule
 `ifndef GLBL
 `define GLBL

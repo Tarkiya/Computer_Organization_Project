@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Thu May 30 15:26:21 2024
--- Host        : LAPTOP-OT4GAFT7 running 64-bit major release  (build 9200)
+-- Date        : Thu May 30 17:29:53 2024
+-- Host        : LAPTOP-END1HUJS running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/segclk/segclk_sim_netlist.vhdl
+--               E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/segclk/segclk_sim_netlist.vhdl
 -- Design      : segclk
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,8 +17,6 @@ use UNISIM.VCOMPONENTS.ALL;
 entity segclk_segclk_clk_wiz is
   port (
     clk_out1 : out STD_LOGIC;
-    reset : in STD_LOGIC;
-    locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -36,6 +34,7 @@ architecture STRUCTURE of segclk_segclk_clk_wiz is
   signal NLW_plle2_adv_inst_CLKOUT4_UNCONNECTED : STD_LOGIC;
   signal NLW_plle2_adv_inst_CLKOUT5_UNCONNECTED : STD_LOGIC;
   signal NLW_plle2_adv_inst_DRDY_UNCONNECTED : STD_LOGIC;
+  signal NLW_plle2_adv_inst_LOCKED_UNCONNECTED : STD_LOGIC;
   signal NLW_plle2_adv_inst_DO_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of clkf_buf : label is "PRIMITIVE";
@@ -120,9 +119,9 @@ plle2_adv_inst: unisim.vcomponents.PLLE2_ADV
       DO(15 downto 0) => NLW_plle2_adv_inst_DO_UNCONNECTED(15 downto 0),
       DRDY => NLW_plle2_adv_inst_DRDY_UNCONNECTED,
       DWE => '0',
-      LOCKED => locked,
+      LOCKED => NLW_plle2_adv_inst_LOCKED_UNCONNECTED,
       PWRDWN => '0',
-      RST => reset
+      RST => '0'
     );
 end STRUCTURE;
 library IEEE;
@@ -132,8 +131,6 @@ use UNISIM.VCOMPONENTS.ALL;
 entity segclk is
   port (
     clk_out1 : out STD_LOGIC;
-    reset : in STD_LOGIC;
-    locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
@@ -145,8 +142,6 @@ begin
 inst: entity work.segclk_segclk_clk_wiz
      port map (
       clk_in1 => clk_in1,
-      clk_out1 => clk_out1,
-      locked => locked,
-      reset => reset
+      clk_out1 => clk_out1
     );
 end STRUCTURE;

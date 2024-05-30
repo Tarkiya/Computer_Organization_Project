@@ -1,8 +1,9 @@
 module IFetch(
-    input clk,rst,
+    input clk,
+    input rst,
     input [31:0] imm32,
-    input branch,
     input zero,
+    input branch,
     output [31:0] inst
     );
     reg [31:0] pc;

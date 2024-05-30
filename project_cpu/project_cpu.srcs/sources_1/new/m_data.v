@@ -11,7 +11,7 @@ module m_data(
     data_memory udata(
         .clka(clk),
         .wea(MemWrite),
-        .addra(ALUResult[13:0]),
+        .addra(ALUResult[15:2]),
         .dina(din),
         .douta(readData)
     );
