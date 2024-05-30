@@ -1,0 +1,39 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu May 30 15:21:45 2024
+# Process ID: 29440
+# Current directory: C:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22412 C:\Users\jinbinghan\Desktop\Computer_Organization_Project\project_cpu\project_cpu.xpr
+# Log file: C:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/vivado.log
+# Journal file: C:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.xpr
+INFO: [Project 1-313] Project file moved from 'E:/Computer_Organization_Project/project_cpu' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2017.4/data/ip'.
+update_compile_order -fileset sources_1
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 5.4 -module_name segclk -dir c:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip
+set_property -dict [list CONFIG.Component_Name {segclk} CONFIG.PRIMITIVE {PLL} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {10.000} CONFIG.CLKOUT1_DRIVES {BUFG} CONFIG.CLKOUT2_DRIVES {BUFG} CONFIG.CLKOUT3_DRIVES {BUFG} CONFIG.CLKOUT4_DRIVES {BUFG} CONFIG.CLKOUT5_DRIVES {BUFG} CONFIG.CLKOUT6_DRIVES {BUFG} CONFIG.CLKOUT7_DRIVES {BUFG} CONFIG.MMCM_DIVCLK_DIVIDE {5} CONFIG.MMCM_CLKFBOUT_MULT_F {41} CONFIG.MMCM_COMPENSATION {ZHOLD} CONFIG.MMCM_CLKOUT0_DIVIDE_F {82} CONFIG.CLKOUT1_JITTER {446.763} CONFIG.CLKOUT1_PHASE_ERROR {313.282}] [get_ips segclk]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'segclk' to 'segclk' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files c:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/segclk/segclk.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'segclk'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  c:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/segclk/segclk.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'segclk'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'segclk'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'segclk'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'segclk'...
+catch { config_ip_cache -export [get_ips -all segclk] }
+export_ip_user_files -of_objects [get_files c:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/segclk/segclk.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/segclk/segclk.xci]
+launch_runs -jobs 10 segclk_synth_1
+[Thu May 30 15:25:58 2024] Launched segclk_synth_1...
+Run output will be captured here: C:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.runs/segclk_synth_1/runme.log
+export_simulation -of_objects [get_files c:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/segclk/segclk.xci] -directory C:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.ip_user_files -ipstatic_source_dir C:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.cache/compile_simlib/modelsim} {questa=C:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.cache/compile_simlib/questa} {riviera=C:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.cache/compile_simlib/riviera} {activehdl=C:/Users/jinbinghan/Desktop/Computer_Organization_Project/project_cpu/project_cpu.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1

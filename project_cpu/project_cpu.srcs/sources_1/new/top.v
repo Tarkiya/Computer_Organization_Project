@@ -11,6 +11,7 @@ module top(
     output [7:0] chipSel//所有片选信号
 );
     wire cpuClk;
+    wire segClk;
     
     wire [31:0] inst;
     wire [31:0] instAddr;
@@ -37,6 +38,8 @@ module top(
     wire IoWrite;//等待Controller添加
     
     clk_wiz_0 clk1(clkIn,cpuClk);
+    segclk(clkIn,segClk);
+    
     MemOrIO uMemOrIO(
         .mRead(MemRead),
         .mWrite(MemWrite),
@@ -95,5 +98,14 @@ module top(
         .din(ReadData2),
         .dout(WriteData)
     );
-    
+    seg seg(
+        .rst(rst),
+        .in(),
+        .en(),
+        .clk(segClk),
+        .segCtrl(segCtrl),
+        .segCtrr(segCtrr),
+        .chipSel(chipSel)
+    );
+   
 endmodule
