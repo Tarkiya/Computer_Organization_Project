@@ -33,8 +33,20 @@ module top(
     wire MemWrite;
     wire ALUSrc;
     wire RegWrite;
+    wire IoRead;//等待Controller添加
+    wire IoWrite;//等待Controller添加
     
     clk_wiz_0 clk1(clkIn,cpuClk);
+    MemOrIO uMemOrIO(
+        .mRead(MemRead),
+        .mWrite(MemWrite),
+        .ioRead(IoRead),
+        .ioWrite(IoWrite),
+        .addr_in(),
+        .m_rdata(),
+        .io_rdata({switchLeft,switchRight}),
+        .r_rdata()
+    );
     IFetch uIFetch(
         .clk(cpuClk),
         .rst(rst),
