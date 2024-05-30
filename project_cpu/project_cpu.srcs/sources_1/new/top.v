@@ -98,6 +98,7 @@ module top(
         .din(ReadData2),
         .dout(WriteData)
     );
+
     seg seg(
         .rst(rst),
         .in(),
