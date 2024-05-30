@@ -11,7 +11,6 @@ module top(
     output [7:0] chipSel//所有片选信号
 );
     wire cpuClk;
-    wire segClk;
     
     wire [31:0] inst;
     wire [31:0] instAddr;
@@ -34,21 +33,25 @@ module top(
     wire MemWrite;
     wire ALUSrc;
     wire RegWrite;
-    wire IoRead;//等待Controller添加
-    wire IoWrite;//等待Controller添加
+    wire IoRead;
+    wire IoWrite;
+    
+    wire LEDCtrl;
+    wire SwitchCtrl;
     
     clk_wiz_0 clk1(clkIn,cpuClk);
-    segclk(clkIn,segClk);
-    
     MemOrIO uMemOrIO(
+        .clk(cpuClk),
         .mRead(MemRead),
         .mWrite(MemWrite),
         .ioRead(IoRead),
         .ioWrite(IoWrite),
-        .addr_in(),
-        .m_rdata(),
+        .addr_in(ALUResult),
+        .m_rdata(WriteData),
         .io_rdata({switchLeft,switchRight}),
-        .r_rdata()
+        .r_rdata(ALUResult)
+        
+        
     );
     IFetch uIFetch(
         .clk(cpuClk),
@@ -98,14 +101,5 @@ module top(
         .din(ReadData2),
         .dout(WriteData)
     );
-    seg seg(
-        .rst(rst),
-        .in(),
-        .en(),
-        .clk(segClk),
-        .segCtrl(segCtrl),
-        .segCtrr(segCtrr),
-        .chipSel(chipSel)
-    );
-   
+    
 endmodule
