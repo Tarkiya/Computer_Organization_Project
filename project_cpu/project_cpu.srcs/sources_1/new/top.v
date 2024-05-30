@@ -28,66 +28,72 @@ module top(
     wire [31:0] imm32;
     wire [31:0] inst;
     wire zero;
+    wire Ecall;
     wire Branch;
+    wire nBranch;
     IFetch uIFetch(
         .clk(cpuClk),
         .rst(rst),
         .imm32(imm32),
         .zero(zero),
-        .branch(Branch),
+        .Ecall(Ecall),
+        .Branch(Branch),
+        .nBranch(nBranch),
         .inst(inst)
     );
     
     // Controller 模块
     /////////////////////////////////////////////////////////////
-    wire MemRead;
-    wire MemtoReg;
+    wire [31:0] ALUResult;
     wire [1:0] ALUOp;
-    wire MemWrite;
     wire ALUSrc;
     wire RegWrite;
+    wire MemRead;
+    wire MemWrite;
+    wire MemtoReg;
+    wire MemorIOtoReg;
+    wire IORead;
+    wire IOWrite;
     Controller uContrl (
-        .inst(inst[6:0]),  
-        .Branch(Branch),  
-        .MemRead(MemRead),  
-        .MemtoReg(MemtoReg),  
+        .inst(inst),
+        .Alu_resultHigh(ALUResult[31:10]),
+        .button(button),
         .ALUOp(ALUOp),
-        .MemWrite(MemWrite),  
-        .ALUSrc(ALUSrc),  
-        .RegWrite(RegWrite)  
+        .ALUSrc(ALUSrc),
+        .RegWrite(RegWrite),
+        .Ecall(Ecall),
+        .MemRead(MemRead),
+        .MemWrite(MemWrite),
+        .Branch(Branch),
+        .nBranch(nBranch),
+        .MemtoReg(MemtoReg),  
+        .MemorIOtoReg(MemorIOtoReg),
+        .IORead(IORead),
+        .IOWrite(IOWrite)
     );
-    wire [31:0] instAddr;
-    wire [3:0]  ALUInst = {inst[30],inst[14:12]};
     
-    wire [31:0] ReadData;
+    // Decoder 模块
+    /////////////////////////////////////////////////////////////
+//    wire [31:0] WriteData;
+    wire [31:0] m_rdata;
+    wire [31:0] m_wdata;
+    wire [31:0] r_wdata;
     wire [31:0] ReadData1;
     wire [31:0] ReadData2;
-    wire [31:0] WriteData;
-    
-    
-    wire [3:0] ALUControl;
-    wire [31:0] ALUResult;
-    
-    
-    
-    
-    wire IoRead;//等待Controller添加
-    wire IoWrite;//等待Controller添加
-    
-    
-    
-    
-    Decoder decoder(
+    Decoder uDecoder(
         .clk(cpuClk),
         .rst(rst),
         .inst(inst),
         .regWrite(RegWrite),
-        .writeData(WriteData),
+        .writeData(r_wdata),
         .rs1Data(ReadData1),
         .rs2Data(ReadData2),
         .imm32(imm32)
     );
-    ALU uut (
+    
+    // ALU 模块
+    /////////////////////////////////////////////////////////////
+    ALU uAlu(
         .ReadData1(ReadData1),
         .ReadData2(ReadData2),
         .imm32(imm32),
@@ -98,33 +104,58 @@ module top(
         .ALUResult(ALUResult),
         .zero(zero)
     );
+    
+    // Memory 模块
+    /////////////////////////////////////////////////////////////
     m_data udata(
         .clk(cpuClk),
-        .MemRead(MemRead),
         .MemWrite(MemWrite),
-        .MemtoReg(MemtoReg),
-        .ALUResult(ALUResult),
+        .addr(ALUResult),
         .din(ReadData2),
-        .dout(WriteData)
+        .dout(m_rdata)
     );
+    
+    // IO 模块
+    /////////////////////////////////////////////////////////////
+    wire LEDCtrl;
+    wire SwitchCtrl;
     MemOrIO uMemOrIO(
         .mRead(MemRead),
         .mWrite(MemWrite),
-        .ioRead(IoRead),
-        .ioWrite(IoWrite),
-        .addr_in(),
-        .m_rdata(),
+        .ioRead(IORead),
+        .ioWrite(IOWrite),
+        .addr_in(ALUResult),
+        .m_rdata(m_rdata),
+        .r_rdata(ReadData2),
         .io_rdata({switchLeft,switchRight}),
-        .r_rdata()
-        );
+        .m_wdata(m_wdata),
+        .r_wdata(r_wdata),
+        .io_wdata({ledLeft,ledRight}),
+        .LEDCtrl(LEDCtrl),
+        .SwitchCtrl(SwitchCtrl)
+    );
+    
+    // 按键消抖
+    /////////////////////////////////////////////////////////////
+    
+    
+    // 拨码开关输入
+    /////////////////////////////////////////////////////////////
+    
+    
+    // 数码管显示
+    /////////////////////////////////////////////////////////////
     seg seg(
         .rst(rst),
-        .in(),
-        .en(),
+        .in({{16{ledLeft[7]}},ledLeft,ledRight}),
+        .en(LEDCtrl),
         .clk(segClk),
         .segCtrl(segCtrl),
         .segCtrr(segCtrr),
         .chipSel(chipSel)
     );
-   
+    
+    // LED显示
+    /////////////////////////////////////////////////////////////
+    
 endmodule

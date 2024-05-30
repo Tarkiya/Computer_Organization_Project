@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="segclk_synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1717061354">
   <File Type="PA-TCL" Name="segclk.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="segclk_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="segclk_reports.tcl"/>
   <File Type="RDS-RDS" Name="segclk.vds"/>
   <File Type="RDS-UTIL" Name="segclk_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="segclk_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="segclk.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="segclk_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="segclk_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/segclk">
     <File Path="$PSRCDIR/sources_1/ip/segclk/segclk.xci">
       <FileInfo>

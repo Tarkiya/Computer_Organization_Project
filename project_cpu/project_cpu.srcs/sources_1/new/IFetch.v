@@ -3,14 +3,21 @@ module IFetch(
     input rst,
     input [31:0] imm32,
     input zero,
-    input branch,
+    input Ecall,
+    input Branch,
+    input nBranch,
     output [31:0] inst
     );
     reg [31:0] pc;
     always @(negedge clk) begin
         if(!rst) pc <= 32'b0;
         else begin
-            if(branch && zero) pc <= pc + imm32;
+            if(Ecall == 1'b1) begin
+                pc <= pc;
+            end
+            if((Branch == 1'b1 && zero == 1'b1)||(nBranch == 1'b1 && zero == 1'b0)) begin
+                pc <= pc + imm32;
+            end 
             else pc <= pc + 4;
         end
     end

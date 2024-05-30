@@ -1,23 +1,17 @@
 module m_data(
     input clk,
-    input MemRead,
+    input rst,
     input MemWrite,
-    input MemtoReg,
-    input [31:0] ALUResult,
+//    input [4:0] button,//´ıÌí¼Ó
+    input [31:0] addr,
     input [31:0] din,
-    output reg [31:0] dout
+    output [31:0] dout
 );
-    wire [31:0] readData;
     data_memory udata(
         .clka(clk),
         .wea(MemWrite),
-        .addra(ALUResult[15:2]),
+        .addra(addr[15:2]),
         .dina(din),
-        .douta(readData)
+        .douta(dout)
     );
-    always @(*)
-      begin
-        if(MemtoReg==1'b0) dout = ALUResult;
-        else dout = readData;
-      end
 endmodule

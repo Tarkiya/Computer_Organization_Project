@@ -40,6 +40,7 @@ module ALU(
             4'b0110: ALUResult = ReadData1 - ALUData;
             4'b0000: ALUResult = ReadData1 & ALUData;
             4'b0001: ALUResult = ReadData1 | ALUData;  
+//            4'b: ALUResult = ReadData1 << ALUData;  
             default: ALUResult = 1'b0;
           endcase
       end
