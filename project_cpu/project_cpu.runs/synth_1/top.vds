@@ -1,0 +1,1074 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat Jun  1 00:18:10 2024
+# Process ID: 4832
+# Current directory: E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/top.vds
+# Journal file: E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: synth_design -top top -part xc7a35tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 14608 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 406.027 ; gain = 102.055
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'top' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/realtime/clk_wiz_0_stub.v:5]
+WARNING: [Synth 8-350] instance 'cpuclk1' of module 'clk_wiz_0' requires 3 connections, but only 2 given [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:19]
+INFO: [Synth 8-638] synthesizing module 'clock_div' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/clock_div.v:1]
+INFO: [Synth 8-256] done synthesizing module 'clock_div' (2#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/clock_div.v:1]
+WARNING: [Synth 8-350] instance 'slowclk' of module 'clock_div' requires 3 connections, but only 2 given [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:23]
+INFO: [Synth 8-638] synthesizing module 'IFetch' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:1]
+INFO: [Synth 8-638] synthesizing module 'inst_memory' [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/realtime/inst_memory_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'inst_memory' (3#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/realtime/inst_memory_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (14) of module 'inst_memory' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:26]
+INFO: [Synth 8-256] done synthesizing module 'IFetch' (4#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:1]
+INFO: [Synth 8-638] synthesizing module 'Controller' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/control.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Controller' (5#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/control.v:1]
+INFO: [Synth 8-638] synthesizing module 'Decoder' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/Decoder.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Decoder' (6#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/Decoder.v:1]
+INFO: [Synth 8-638] synthesizing module 'ALU' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (7#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:1]
+INFO: [Synth 8-638] synthesizing module 'm_data' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/m_data.v:1]
+INFO: [Synth 8-638] synthesizing module 'data_memory' [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/realtime/data_memory_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'data_memory' (8#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/realtime/data_memory_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'm_data' (9#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/m_data.v:1]
+INFO: [Synth 8-638] synthesizing module 'MemOrIO' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:24]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:44]
+INFO: [Synth 8-256] done synthesizing module 'MemOrIO' (10#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:1]
+WARNING: [Synth 8-689] width (16) of port connection 'io_rdata' does not match port width (32) of module 'MemOrIO' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:132]
+WARNING: [Synth 8-689] width (16) of port connection 'io_wdata' does not match port width (32) of module 'MemOrIO' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:135]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/debouncer.v:1]
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (11#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/debouncer.v:1]
+INFO: [Synth 8-638] synthesizing module 'seg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:1]
+INFO: [Synth 8-226] default block is never used [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:19]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:76]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:76]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:96]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:96]
+WARNING: [Synth 8-567] referenced signal 'curdata' should be on the sensitivity list [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:74]
+INFO: [Synth 8-256] done synthesizing module 'seg' (12#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:1]
+INFO: [Synth 8-638] synthesizing module 'led' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:1]
+INFO: [Synth 8-256] done synthesizing module 'led' (13#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:1]
+INFO: [Synth 8-256] done synthesizing module 'top' (14#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[31]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[30]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[29]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[28]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[27]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[26]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[25]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[24]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[23]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[22]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[21]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[20]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[19]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[18]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[17]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[16]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[15]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[14]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[13]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[12]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[11]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[10]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[9]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[8]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[7]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[6]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[5]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port alu_data[4]
+WARNING: [Synth 8-3331] design m_data has unconnected port rst
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[31]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[30]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[29]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[28]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[27]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[26]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[25]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[24]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[23]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[22]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[21]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[20]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[19]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[18]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[17]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[16]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[1]
+WARNING: [Synth 8-3331] design m_data has unconnected port addr[0]
+WARNING: [Synth 8-3331] design ALU has unconnected port funct7[6]
+WARNING: [Synth 8-3331] design ALU has unconnected port funct7[4]
+WARNING: [Synth 8-3331] design ALU has unconnected port funct7[3]
+WARNING: [Synth 8-3331] design ALU has unconnected port funct7[2]
+WARNING: [Synth 8-3331] design ALU has unconnected port funct7[1]
+WARNING: [Synth 8-3331] design ALU has unconnected port funct7[0]
+WARNING: [Synth 8-3331] design Controller has unconnected port button[4]
+WARNING: [Synth 8-3331] design Controller has unconnected port button[3]
+WARNING: [Synth 8-3331] design Controller has unconnected port button[2]
+WARNING: [Synth 8-3331] design Controller has unconnected port button[1]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Ecall
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 458.320 ; gain = 154.348
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin slowclk:clk to constant 0 [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 458.320 ; gain = 154.348
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/dcp3/inst_memory_in_context.xdc] for cell 'uIFetch/uinst'
+Finished Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/dcp3/inst_memory_in_context.xdc] for cell 'uIFetch/uinst'
+Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/dcp4/data_memory_in_context.xdc] for cell 'udata/udata'
+Finished Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/dcp4/data_memory_in_context.xdc] for cell 'udata/udata'
+Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/dcp5/clk_wiz_0_in_context.xdc] for cell 'cpuclk1'
+Finished Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/dcp5/clk_wiz_0_in_context.xdc] for cell 'cpuclk1'
+Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc]
+Finished Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 800.449 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:18 . Memory (MB): peak = 800.449 ; gain = 496.477
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:18 . Memory (MB): peak = 800.449 ; gain = 496.477
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clkIn. (constraint file  E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/dcp5/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clkIn. (constraint file  E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-4832-LAPTOP-END1HUJS/dcp5/clk_wiz_0_in_context.xdc, line 5).
+Applied set_property DONT_TOUCH = true for cpuclk1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for uIFetch/uinst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for udata/udata. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:18 . Memory (MB): peak = 800.449 ; gain = 496.477
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "clk_2ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "cnt_2ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_20ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "cnt_20ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element pc_reg was removed.  [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:13]
+INFO: [Synth 8-5546] ROM "ALUOp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ALUSrc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegWrite" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:38]
+INFO: [Synth 8-5545] ROM "zero" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "ALUControl" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "r_wdata" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "io_wdata" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'count_reg' in module 'seg'
+INFO: [Synth 8-5544] ROM "chip_sel" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "count" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'imm32_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/Decoder.v:28]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUControl_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:18]
+WARNING: [Synth 8-327] inferring latch for variable 'm_wdata_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:51]
+WARNING: [Synth 8-327] inferring latch for variable 'r_wdata_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:25]
+WARNING: [Synth 8-327] inferring latch for variable 'io_wdata_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:45]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              000 |                              000
+                 iSTATE0 |                              001 |                              001
+                 iSTATE1 |                              010 |                              010
+                 iSTATE2 |                              011 |                              011
+                 iSTATE3 |                              100 |                              100
+                 iSTATE4 |                              101 |                              101
+                 iSTATE5 |                              110 |                              110
+                 iSTATE6 |                              111 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'count_reg' using encoding 'sequential' in module 'seg'
+WARNING: [Synth 8-327] inferring latch for variable 'seg_ctrl_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:97]
+WARNING: [Synth 8-327] inferring latch for variable 'seg_ctrr_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:77]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 800.449 ; gain = 496.477
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   3 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 37    
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 12    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 9     
+	   7 Input     32 Bit        Muxes := 1     
+	   5 Input     32 Bit        Muxes := 2     
+	   8 Input      8 Bit        Muxes := 1     
+	  15 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 4     
+	   2 Input      5 Bit        Muxes := 3     
+	   4 Input      4 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   8 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 39    
+	   8 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+	  14 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module clock_div 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module IFetch 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module Controller 
+Detailed RTL Component Info : 
++---Muxes : 
+	   8 Input      2 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 2     
+Module Decoder 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 34    
++---Muxes : 
+	   7 Input     32 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 32    
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   5 Input     32 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module MemOrIO 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 2     
+Module debouncer 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module seg 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   8 Input      8 Bit        Muxes := 1     
+	  15 Input      8 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	  14 Input      1 Bit        Muxes := 2     
+Module led 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "slowclk/cnt_2ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "slowclk/clk_2ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "slowclk/cnt_20ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "slowclk/clk_20ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "uContrl/ALUOp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "uContrl/ALUSrc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "uContrl/RegWrite" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "uAlu/zero" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element uIFetch/pc_reg was removed.  [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:13]
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_127' (LD) to 'io_wdata_reg__0i_126'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_126' (LD) to 'io_wdata_reg__0i_125'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_125' (LD) to 'io_wdata_reg__0i_124'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_124' (LD) to 'io_wdata_reg__0i_123'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_123' (LD) to 'io_wdata_reg__0i_122'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_122' (LD) to 'io_wdata_reg__0i_121'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_121' (LD) to 'io_wdata_reg__0i_120'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_120' (LD) to 'io_wdata_reg__0i_119'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_119' (LD) to 'io_wdata_reg__0i_118'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_118' (LD) to 'io_wdata_reg__0i_117'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_117' (LD) to 'io_wdata_reg__0i_116'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_116' (LD) to 'io_wdata_reg__0i_115'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_115' (LD) to 'io_wdata_reg__0i_114'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_114' (LD) to 'io_wdata_reg__0i_113'
+INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_113' (LD) to 'io_wdata_reg__0i_112'
+INFO: [Synth 8-3886] merging instance 'uDecoder/imm32_reg[31]' (LD) to 'uDecoder/imm32_reg[27]'
+INFO: [Synth 8-3886] merging instance 'uDecoder/imm32_reg[27]' (LD) to 'uDecoder/imm32_reg[28]'
+INFO: [Synth 8-3886] merging instance 'uDecoder/imm32_reg[28]' (LD) to 'uDecoder/imm32_reg[29]'
+INFO: [Synth 8-3886] merging instance 'uDecoder/imm32_reg[29]' (LD) to 'uDecoder/imm32_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uDecoder/imm32_reg[30]' (LD) to 'uDecoder/imm32_reg[26]'
+INFO: [Synth 8-3886] merging instance 'uDecoder/imm32_reg[26]' (LD) to 'uDecoder/imm32_reg[21]'
+INFO: [Synth 8-3886] merging instance 'uDecoder/imm32_reg[21]' (LD) to 'uDecoder/imm32_reg[22]'
+INFO: [Synth 8-3886] merging instance 'uDecoder/imm32_reg[22]' (LD) to 'uDecoder/imm32_reg[23]'
+INFO: [Synth 8-3886] merging instance 'uDecoder/imm32_reg[23]' (LD) to 'uDecoder/imm32_reg[24]'
+INFO: [Synth 8-3886] merging instance 'uDecoder/imm32_reg[24]' (LD) to 'uDecoder/imm32_reg[25]'
+INFO: [Synth 8-3886] merging instance 'uDecoder/imm32_reg[25]' (LD) to 'uDecoder/imm32_reg[20]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uAlu/ALUControl_reg[3] )
+WARNING: [Synth 8-3332] Sequential element (uAlu/ALUControl_reg[3]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[31]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[30]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[29]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[28]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[27]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[26]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[25]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[24]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[23]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[22]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[21]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[20]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[19]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[18]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[17]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[16]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[15]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[14]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[13]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[12]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[11]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[10]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[9]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[8]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[7]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[6]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[5]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[4]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[3]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[2]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[1]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/m_wdata_reg[0]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_32) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_33) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_34) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_35) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_36) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_37) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_38) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_39) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_40) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_41) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_42) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_43) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_44) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_45) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_46) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_47) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_48) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_49) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_50) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_51) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_52) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_53) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_54) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_55) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_56) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_57) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_58) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_59) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_60) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_61) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_62) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (m_wdata_reg__0i_63) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[31]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[30]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[29]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[28]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[27]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[26]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[25]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[24]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[23]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[22]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[21]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[20]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[19]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[18]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[17]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uMemOrIO/io_wdata_reg[16]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_96) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_97) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_98) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_99) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_100) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_101) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_102) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_103) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_104) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_105) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_106) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_107) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_108) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_109) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_110) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (io_wdata_reg__0i_111) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uIFetch/pc_reg[16]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uIFetch/pc_reg[17]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (uIFetch/pc_reg[18]) is unused and will be removed from module top.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:34 . Memory (MB): peak = 800.449 ; gain = 496.477
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'cpuclk1/clk_out1' to pin 'cpuclk1/bbstub_clk_out1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'cpuclk1/clk_out2' to pin 'cpuclk1/bbstub_clk_out2/O'
+INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:42 . Memory (MB): peak = 809.859 ; gain = 505.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+Found timing loop:
+     0: i_0/i_78/O (GATE_2_8_AND)
+     1: i_0/i_78/I1 (GATE_2_8_AND)
+     2: i_0/i_70/O (GATE_2_8_AND)
+     3: i_0/i_70/I1 (GATE_2_8_AND)
+     4: i_0/i_78/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_78"
+Found timing loop:
+     0: i_0/i_79/O (GATE_2_8_AND)
+     1: i_0/i_79/I1 (GATE_2_8_AND)
+     2: i_0/i_71/O (GATE_2_8_AND)
+     3: i_0/i_71/I1 (GATE_2_8_AND)
+     4: i_0/i_79/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_79"
+Found timing loop:
+     0: i_0/i_80/O (GATE_2_8_AND)
+     1: i_0/i_80/I1 (GATE_2_8_AND)
+     2: i_0/i_72/O (GATE_2_8_AND)
+     3: i_0/i_72/I1 (GATE_2_8_AND)
+     4: i_0/i_80/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_80"
+Found timing loop:
+     0: i_0/i_81/O (GATE_2_8_AND)
+     1: i_0/i_81/I1 (GATE_2_8_AND)
+     2: i_0/i_73/O (GATE_2_8_AND)
+     3: i_0/i_73/I1 (GATE_2_8_AND)
+     4: i_0/i_81/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_81"
+Found timing loop:
+     0: i_0/i_82/O (GATE_2_8_AND)
+     1: i_0/i_82/I1 (GATE_2_8_AND)
+     2: i_0/i_74/O (GATE_2_8_AND)
+     3: i_0/i_74/I1 (GATE_2_8_AND)
+     4: i_0/i_82/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_82"
+Found timing loop:
+     0: i_0/i_83/O (GATE_2_8_AND)
+     1: i_0/i_83/I1 (GATE_2_8_AND)
+     2: i_0/i_75/O (GATE_2_8_AND)
+     3: i_0/i_75/I1 (GATE_2_8_AND)
+     4: i_0/i_83/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_83"
+Found timing loop:
+     0: i_0/i_84/O (GATE_2_8_AND)
+     1: i_0/i_84/I1 (GATE_2_8_AND)
+     2: i_0/i_76/O (GATE_2_8_AND)
+     3: i_0/i_76/I1 (GATE_2_8_AND)
+     4: i_0/i_84/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_84"
+Found timing loop:
+     0: i_0/i_85/O (GATE_2_8_AND)
+     1: i_0/i_85/I1 (GATE_2_8_AND)
+     2: i_0/i_77/O (GATE_2_8_AND)
+     3: i_0/i_77/I1 (GATE_2_8_AND)
+     4: i_0/i_85/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_85"
+Found timing loop:
+     0: i_0/i_101/O (GATE_2_8_AND)
+     1: i_0/i_101/I1 (GATE_2_8_AND)
+     2: i_0/i_93/O (GATE_2_8_AND)
+     3: i_0/i_93/I1 (GATE_2_8_AND)
+     4: i_0/i_101/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_101"
+Found timing loop:
+     0: i_0/i_100/O (GATE_2_8_AND)
+     1: i_0/i_100/I1 (GATE_2_8_AND)
+     2: i_0/i_92/O (GATE_2_8_AND)
+     3: i_0/i_92/I1 (GATE_2_8_AND)
+     4: i_0/i_100/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_100"
+Found timing loop:
+     0: i_0/i_99/O (GATE_2_8_AND)
+     1: i_0/i_99/I1 (GATE_2_8_AND)
+     2: i_0/i_91/O (GATE_2_8_AND)
+     3: i_0/i_91/I1 (GATE_2_8_AND)
+     4: i_0/i_99/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_99"
+Found timing loop:
+     0: i_0/i_98/O (GATE_2_8_AND)
+     1: i_0/i_98/I1 (GATE_2_8_AND)
+     2: i_0/i_90/O (GATE_2_8_AND)
+     3: i_0/i_90/I1 (GATE_2_8_AND)
+     4: i_0/i_98/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_98"
+Found timing loop:
+     0: i_0/i_97/O (GATE_2_8_AND)
+     1: i_0/i_97/I1 (GATE_2_8_AND)
+     2: i_0/i_89/O (GATE_2_8_AND)
+     3: i_0/i_89/I1 (GATE_2_8_AND)
+     4: i_0/i_97/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_97"
+Found timing loop:
+     0: i_0/i_96/O (GATE_2_8_AND)
+     1: i_0/i_96/I1 (GATE_2_8_AND)
+     2: i_0/i_88/O (GATE_2_8_AND)
+     3: i_0/i_88/I1 (GATE_2_8_AND)
+     4: i_0/i_96/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_96"
+Found timing loop:
+     0: i_0/i_95/O (GATE_2_8_AND)
+     1: i_0/i_95/I1 (GATE_2_8_AND)
+     2: i_0/i_87/O (GATE_2_8_AND)
+     3: i_0/i_87/I1 (GATE_2_8_AND)
+     4: i_0/i_95/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_95"
+Found timing loop:
+     0: i_0/i_94/O (GATE_2_8_AND)
+     1: i_0/i_94/I1 (GATE_2_8_AND)
+     2: i_0/i_86/O (GATE_2_8_AND)
+     3: i_0/i_86/I1 (GATE_2_8_AND)
+     4: i_0/i_94/O (GATE_2_8_AND)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:17]
+Inferred a: "set_disable_timing -from I1 -to O i_0/i_94"
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:57 . Memory (MB): peak = 918.508 ; gain = 614.535
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-264] enable of latch \useg/seg_ctrr_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \useg/seg_ctrr_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \useg/seg_ctrr_reg[6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \useg/seg_ctrr_reg[6]  is always disabled
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\useg/seg_ctrr_reg[2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\useg/seg_ctrr_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\useg/seg_ctrr_reg[4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\useg/seg_ctrr_reg[5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\useg/seg_ctrr_reg[7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\useg/seg_ctrl_reg[2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\useg/seg_ctrl_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\useg/seg_ctrl_reg[4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\useg/seg_ctrl_reg[5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\useg/seg_ctrl_reg[6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\useg/seg_ctrl_reg[7] )
+WARNING: [Synth 8-264] enable of latch \useg/seg_ctrr_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \useg/seg_ctrr_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \useg/seg_ctrr_reg[6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \useg/seg_ctrr_reg[6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \useg/seg_ctrr_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \useg/seg_ctrr_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \useg/seg_ctrr_reg[6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \useg/seg_ctrr_reg[6]  is always disabled
+Found timing loop:
+     0: i_994/O (LUT2)
+     1: i_994/I1 (LUT2)
+     2: i_8/O (LUT3)
+     3: i_8/I2 (LUT3)
+     4: i_994/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_994"
+Found timing loop:
+     0: i_995/O (LUT2)
+     1: i_995/I1 (LUT2)
+     2: i_9/O (LUT3)
+     3: i_9/I2 (LUT3)
+     4: i_995/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_995"
+Found timing loop:
+     0: i_996/O (LUT2)
+     1: i_996/I1 (LUT2)
+     2: i_10/O (LUT3)
+     3: i_10/I2 (LUT3)
+     4: i_996/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_996"
+Found timing loop:
+     0: i_997/O (LUT2)
+     1: i_997/I1 (LUT2)
+     2: i_11/O (LUT3)
+     3: i_11/I2 (LUT3)
+     4: i_997/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_997"
+Found timing loop:
+     0: i_998/O (LUT2)
+     1: i_998/I1 (LUT2)
+     2: i_12/O (LUT3)
+     3: i_12/I2 (LUT3)
+     4: i_998/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_998"
+Found timing loop:
+     0: i_999/O (LUT2)
+     1: i_999/I1 (LUT2)
+     2: i_13/O (LUT3)
+     3: i_13/I2 (LUT3)
+     4: i_999/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_999"
+Found timing loop:
+     0: i_1000/O (LUT2)
+     1: i_1000/I1 (LUT2)
+     2: i_14/O (LUT3)
+     3: i_14/I2 (LUT3)
+     4: i_1000/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_1000"
+Found timing loop:
+     0: i_1001/O (LUT2)
+     1: i_1001/I1 (LUT2)
+     2: i_15/O (LUT3)
+     3: i_15/I2 (LUT3)
+     4: i_1001/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_1001"
+Found timing loop:
+     0: i_993/O (LUT2)
+     1: i_993/I1 (LUT2)
+     2: i_16/O (LUT3)
+     3: i_16/I2 (LUT3)
+     4: i_993/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_993"
+Found timing loop:
+     0: i_992/O (LUT2)
+     1: i_992/I1 (LUT2)
+     2: i_17/O (LUT3)
+     3: i_17/I2 (LUT3)
+     4: i_992/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_992"
+Found timing loop:
+     0: i_991/O (LUT2)
+     1: i_991/I1 (LUT2)
+     2: i_18/O (LUT3)
+     3: i_18/I2 (LUT3)
+     4: i_991/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_991"
+Found timing loop:
+     0: i_990/O (LUT2)
+     1: i_990/I1 (LUT2)
+     2: i_19/O (LUT3)
+     3: i_19/I2 (LUT3)
+     4: i_990/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_990"
+Found timing loop:
+     0: i_989/O (LUT2)
+     1: i_989/I1 (LUT2)
+     2: i_20/O (LUT3)
+     3: i_20/I2 (LUT3)
+     4: i_989/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_989"
+Found timing loop:
+     0: i_988/O (LUT2)
+     1: i_988/I1 (LUT2)
+     2: i_21/O (LUT3)
+     3: i_21/I2 (LUT3)
+     4: i_988/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_988"
+Found timing loop:
+     0: i_987/O (LUT2)
+     1: i_987/I1 (LUT2)
+     2: i_22/O (LUT3)
+     3: i_22/I2 (LUT3)
+     4: i_987/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_987"
+Found timing loop:
+     0: i_986/O (LUT2)
+     1: i_986/I1 (LUT2)
+     2: i_23/O (LUT3)
+     3: i_23/I2 (LUT3)
+     4: i_986/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Inferred a: "set_disable_timing -from I1 -to O i_986"
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:58 . Memory (MB): peak = 918.508 ; gain = 614.535
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:58 . Memory (MB): peak = 918.508 ; gain = 614.535
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[0] with 1st driver pin 'i_1_64/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[0] with 2nd driver pin 'i_1_10/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[1] with 1st driver pin 'i_1_65/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[1] with 2nd driver pin 'i_1_11/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[2] with 1st driver pin 'i_1_66/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[2] with 2nd driver pin 'i_1_12/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[3] with 1st driver pin 'i_1_67/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[3] with 2nd driver pin 'i_1_13/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[4] with 1st driver pin 'i_1_68/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[4] with 2nd driver pin 'i_1_14/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[5] with 1st driver pin 'i_1_69/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[5] with 2nd driver pin 'i_1_15/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[6] with 1st driver pin 'i_1_70/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[6] with 2nd driver pin 'i_1_16/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[7] with 1st driver pin 'i_1_71/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledRight_OBUF[7] with 2nd driver pin 'i_1_17/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[7] with 1st driver pin 'i_1_79/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[7] with 2nd driver pin 'i_1_18/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[6] with 1st driver pin 'i_1_78/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[6] with 2nd driver pin 'i_1_19/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[5] with 1st driver pin 'i_1_77/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[5] with 2nd driver pin 'i_1_20/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[4] with 1st driver pin 'i_1_76/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[4] with 2nd driver pin 'i_1_21/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[3] with 1st driver pin 'i_1_75/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[3] with 2nd driver pin 'i_1_22/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[2] with 1st driver pin 'i_1_74/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[2] with 2nd driver pin 'i_1_23/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[1] with 1st driver pin 'i_1_73/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[1] with 2nd driver pin 'i_1_24/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[0] with 1st driver pin 'i_1_72/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ledLeft_OBUF[0] with 2nd driver pin 'i_1_25/O' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:9]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|       16|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:58 . Memory (MB): peak = 918.508 ; gain = 614.535
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Found timing loop:
+     0: \ledRight_OBUF[0]_inst_i_1 /O (LUT2)
+     1: \ledRight_OBUF[0]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledRight_OBUF[1]_inst_i_1 /O (LUT2)
+     1: \ledRight_OBUF[1]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledRight_OBUF[2]_inst_i_1 /O (LUT2)
+     1: \ledRight_OBUF[2]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledRight_OBUF[3]_inst_i_1 /O (LUT2)
+     1: \ledRight_OBUF[3]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledRight_OBUF[4]_inst_i_1 /O (LUT2)
+     1: \ledRight_OBUF[4]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledRight_OBUF[5]_inst_i_1 /O (LUT2)
+     1: \ledRight_OBUF[5]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledRight_OBUF[6]_inst_i_1 /O (LUT2)
+     1: \ledRight_OBUF[6]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledRight_OBUF[7]_inst_i_1 /O (LUT2)
+     1: \ledRight_OBUF[7]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledLeft_OBUF[7]_inst_i_1 /O (LUT2)
+     1: \ledLeft_OBUF[7]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledLeft_OBUF[6]_inst_i_1 /O (LUT2)
+     1: \ledLeft_OBUF[6]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledLeft_OBUF[5]_inst_i_1 /O (LUT2)
+     1: \ledLeft_OBUF[5]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledLeft_OBUF[4]_inst_i_1 /O (LUT2)
+     1: \ledLeft_OBUF[4]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledLeft_OBUF[3]_inst_i_1 /O (LUT2)
+     1: \ledLeft_OBUF[3]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledLeft_OBUF[2]_inst_i_1 /O (LUT2)
+     1: \ledLeft_OBUF[2]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledLeft_OBUF[1]_inst_i_1 /O (LUT2)
+     1: \ledLeft_OBUF[1]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+Found timing loop:
+     0: \ledLeft_OBUF[0]_inst_i_1 /O (LUT2)
+     1: \ledLeft_OBUF[0]_inst_i_1 /O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledRight_OBUF[0]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledRight_OBUF[1]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledRight_OBUF[2]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledRight_OBUF[3]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledRight_OBUF[4]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledRight_OBUF[5]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledRight_OBUF[6]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledRight_OBUF[7]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledLeft_OBUF[7]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledLeft_OBUF[6]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledLeft_OBUF[5]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledLeft_OBUF[4]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledLeft_OBUF[3]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledLeft_OBUF[2]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledLeft_OBUF[1]_inst_i_2 /O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \ledLeft_OBUF[0]_inst_i_2 /O'
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:58 . Memory (MB): peak = 918.508 ; gain = 614.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 918.508 ; gain = 614.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 918.508 ; gain = 614.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 918.508 ; gain = 614.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
+|2     |inst_memory   |         1|
+|3     |data_memory   |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |clk_wiz_0   |     1|
+|2     |data_memory |     1|
+|3     |inst_memory |     1|
+|4     |BUFG        |     2|
+|5     |CARRY4      |    12|
+|6     |LUT1        |     3|
+|7     |LUT2        |    31|
+|8     |LUT3        |    23|
+|9     |LUT4        |    54|
+|10    |LUT5        |    88|
+|11    |LUT6        |   772|
+|12    |MUXF7       |    64|
+|13    |FDRE        |  1107|
+|14    |LD          |    72|
+|15    |IBUF        |    17|
+|16    |OBUF        |    40|
++------+------------+------+
+
+Report Instance Areas: 
++------+-----------+--------+------+
+|      |Instance   |Module  |Cells |
++------+-----------+--------+------+
+|1     |top        |        |  2351|
+|2     |  uAlu     |ALU     |     8|
+|3     |  uDecoder |Decoder |  1846|
+|4     |  uIFetch  |IFetch  |   330|
+|5     |  uMemOrIO |MemOrIO |    64|
+|6     |  udata    |m_data  |    32|
+|7     |  useg     |seg     |     8|
++------+-----------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 918.508 ; gain = 614.535
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 80 critical warnings and 252 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:52 . Memory (MB): peak = 918.508 ; gain = 272.406
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 918.508 ; gain = 614.535
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 165 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'top' is not ideal for floorplanning, since the cellview 'Decoder' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 72 instances were transformed.
+  LD => LDCE: 72 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+142 Infos, 207 Warnings, 80 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:01:02 . Memory (MB): peak = 918.508 ; gain = 626.055
+INFO: [Common 17-1381] The checkpoint 'E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 918.508 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Jun  1 00:19:17 2024...
