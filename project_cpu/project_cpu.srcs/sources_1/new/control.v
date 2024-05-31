@@ -19,7 +19,7 @@ module Controller (
     assign nBranch = (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b1);
     assign Lw = (inst[6:0] == 7'b0010011 && inst[14:12] == 3'b10);
     assign Sw = (inst[6:0] == 7'b0100011);
-    assign Ecall = (button[0]==1'b0 && inst[32:0] == 32'h00000073);
+    assign Ecall = (button[0]==1'b0 && inst[31:0] == 32'h00000073);
     assign MemRead  = (inst[6:0] == 7'b0010011);
     assign MemWrite = ((Sw == 1) && (Alu_resultHigh[21:0] != 22'h3FFFFF)) ? 1'b1:1'b0;
     assign MemorIOtoReg = (IORead || MemRead);

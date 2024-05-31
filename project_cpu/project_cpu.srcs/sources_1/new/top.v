@@ -1,9 +1,9 @@
 module top(
     input clkIn,
     input rst,
+    input [4:0] button,
     input [7:0] switchLeft,
     input [7:0] switchRight,
-    input [4:0] button,
     output [7:0] ledLeft,
     output [7:0] ledRight,
     output [7:0] segCtrl,//左侧段选信号
@@ -12,15 +12,17 @@ module top(
 );
     // 时钟调频
     /////////////////////////////////////////////////////////////
+    wire [4:0] debutton;
     wire cpuClk;//cpu时钟
+    wire deClk;//消抖时钟
     wire segClk;//数码管显示时钟
     clk_wiz_0 cpuclk1(
         .clk_in1(clkIn),
         .clk_out1(cpuClk)
     );
-    segclk segclk1(
-        .clk_in1(clkIn),
-        .clk_out1(segClk)
+    clock_div slowclk(
+        .clk_2ms(segClk),
+        .clk_20ms(deClk)
     );
     
     // IFetch 模块
@@ -50,14 +52,13 @@ module top(
     wire RegWrite;
     wire MemRead;
     wire MemWrite;
-    wire MemtoReg;
     wire MemorIOtoReg;
     wire IORead;
     wire IOWrite;
     Controller uContrl (
         .inst(inst),
         .Alu_resultHigh(ALUResult[31:10]),
-        .button(button),
+        .button(debutton),
         .ALUOp(ALUOp),
         .ALUSrc(ALUSrc),
         .RegWrite(RegWrite),
@@ -66,7 +67,6 @@ module top(
         .MemWrite(MemWrite),
         .Branch(Branch),
         .nBranch(nBranch),
-        .MemtoReg(MemtoReg),  
         .MemorIOtoReg(MemorIOtoReg),
         .IORead(IORead),
         .IOWrite(IOWrite)
@@ -74,7 +74,6 @@ module top(
     
     // Decoder 模块
     /////////////////////////////////////////////////////////////
-//    wire [31:0] WriteData;
     wire [31:0] m_rdata;
     wire [31:0] m_wdata;
     wire [31:0] r_wdata;
@@ -83,8 +82,9 @@ module top(
     Decoder uDecoder(
         .clk(cpuClk),
         .rst(rst),
-        .inst(inst),
+        .ecall(Ecall),
         .regWrite(RegWrite),
+        .inst(inst),
         .writeData(r_wdata),
         .rs1Data(ReadData1),
         .rs2Data(ReadData2),
@@ -109,6 +109,7 @@ module top(
     /////////////////////////////////////////////////////////////
     m_data udata(
         .clk(cpuClk),
+        .rst(rst),
         .MemWrite(MemWrite),
         .addr(ALUResult),
         .din(ReadData2),
@@ -120,11 +121,12 @@ module top(
     wire LEDCtrl;
     wire SwitchCtrl;
     MemOrIO uMemOrIO(
+        .ecall(Ecall),
         .mRead(MemRead),
         .mWrite(MemWrite),
         .ioRead(IORead),
         .ioWrite(IOWrite),
-        .addr_in(ALUResult),
+        .alu_data(ALUResult),
         .m_rdata(m_rdata),
         .r_rdata(ReadData2),
         .io_rdata({switchLeft,switchRight}),
@@ -137,25 +139,51 @@ module top(
     
     // 按键消抖
     /////////////////////////////////////////////////////////////
-    
-    
-    // 拨码开关输入
-    /////////////////////////////////////////////////////////////
-    
-    
+    debouncer debouncer0(
+        .slowclk(deClk),
+        .button(button[0]),
+        .signal(debutton[0])
+    );
+    debouncer debouncer1(
+        .slowclk(deClk),
+        .button(button[1]),
+        .signal(debutton[1])
+    );
+    debouncer debouncer2(
+        .slowclk(deClk),
+        .button(button[2]),
+        .signal(debutton[2])
+    );
+    debouncer debouncer3(
+        .slowclk(deClk),
+        .button(button[3]),
+        .signal(debutton[3])
+    );
+    debouncer debouncer4(
+        .slowclk(deClk),
+        .button(button[4]),
+        .signal(debutton[4])
+    );
+        
     // 数码管显示
     /////////////////////////////////////////////////////////////
-    seg seg(
+    seg useg(
         .rst(rst),
         .in({{16{ledLeft[7]}},ledLeft,ledRight}),
         .en(LEDCtrl),
         .clk(segClk),
-        .segCtrl(segCtrl),
-        .segCtrr(segCtrr),
-        .chipSel(chipSel)
+        .seg_ctrl(segCtrl),
+        .seg_ctrr(segCtrr),
+        .chip_sel(chipSel)
     );
     
     // LED显示
     /////////////////////////////////////////////////////////////
-    
+    led uled(
+        .rst(rst),
+        .in({ledLeft,ledRight}),
+        .en(LEDCtrl),
+        .ledLeft(ledLeft),
+        .ledRight(ledRight)
+    );
 endmodule
