@@ -77,6 +77,7 @@ module top(
         .Bltu(Bltu),
         .Bgeu(Bgeu),
         .Lb(Lb),
+        .Lbu(Lbu),
         .MemorIOtoReg(MemorIOtoReg),
         .IORead(IORead),
         .IOWrite(IOWrite)
@@ -145,6 +146,7 @@ module top(
         .ioRead(IORead),
         .ioWrite(IOWrite),
         .Lb(Lb),
+        .Lbu(Lbu),
         .alu_data(ALUResult),
         .m_rdata(m_rdata),
         .r_rdata(ReadData2),
