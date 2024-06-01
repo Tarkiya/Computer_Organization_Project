@@ -8,13 +8,13 @@ module Controller (
     output Ecall,
     output MemRead,
     output MemWrite,
-    output Branch,nBranch,blt,bge,bltu,bgeu,lb,// Ϊ 1 ������Beq,Bneָ��
-    output MemorIOtoReg,  // Ϊ 1 ������Ҫ�Ӵ洢���� I/O �����ݵ��Ĵ��� 
-    output IORead,        // Ϊ 1 ������ I/O �� 
-    output IOWrite        // Ϊ 1 ������ I/O д 
+    output Branch,nBranch,blt,bge,bltu,bgeu,lb,
+    output MemorIOtoReg,
+    output IORead,
+    output IOWrite
 );
-    wire Lw;// Ϊ 1 ��ʾ��lwָ��
-    wire Sw;// Ϊ 1 ��ʾ��swָ��
+    wire Lw;
+    wire Sw;
     assign Branch = (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b0);
     assign nBranch = (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b1);
     assign blt= (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b100);
