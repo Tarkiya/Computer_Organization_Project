@@ -10,7 +10,7 @@ module IFetch(
     );
     reg [31:0] pc;
     always @(negedge clk) begin
-        if(!rst) pc <= 32'b0;
+        if(!rst) pc <= 32'h00400000;
         else begin
             if(Ecall == 1'b1) begin
                 pc <= pc;
