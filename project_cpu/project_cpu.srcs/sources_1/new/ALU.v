@@ -23,7 +23,8 @@ module ALU(
               4'b1000: ALUControl=4'b0110;
               4'b0111: ALUControl=4'b0000;
               4'b0110: ALUControl=4'b0001; 
-              4'b0001: ALUControl=4'b1111;
+              4'b0001: ALUControl=4'b1111;//×óÒÆ
+              4'b0101: ALUControl=4'b1110;//Âß¼­ÓÒÒÆ
               default: ALUControl=1'b0;
             endcase
           end
@@ -42,6 +43,7 @@ module ALU(
             4'b0000: ALUResult = ReadData1 & ALUData;
             4'b0001: ALUResult = ReadData1 | ALUData;  
             4'b1111: ALUResult = ReadData1 << ALUData;  
+            4'b1110: ALUResult = ReadData1 >> ALUData;  
             default: ALUResult = 1'b0;
           endcase
       end
