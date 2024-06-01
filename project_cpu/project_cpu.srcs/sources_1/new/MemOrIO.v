@@ -4,6 +4,7 @@ module MemOrIO(
     input mWrite,
     input ioRead,
     input ioWrite,
+    input lb,
     
     input [31:0] alu_data,
     input [31:0] m_rdata,
@@ -25,13 +26,17 @@ module MemOrIO(
                 4'b0101: r_wdata = io_rdata;
             endcase
         end
-        else begin
-            if(mRead == 1'b1) begin
-                r_wdata = m_rdata;
-            end
-            else if(ioRead == 1'b1) begin
-                r_wdata = io_rdata;
-            end
+        else begin  
+            if(mRead == 1'b1) begin  
+                r_wdata = m_rdata;  
+            end  
+            else if(ioRead == 1'b1 && ~lb) begin  
+                r_wdata = io_rdata;  
+            end  
+            else if(ioRead == 1'b1 && lb) begin // 这里我添加了 ioRead == 1'b1 以保持与前一个条件的一致性  
+                r_wdata = {{24{0}}, io_rdata[15:8]};  
+            end  
+            // 如果需要，可以添加更多的 else if 或 else 语句  
         end
     end
     

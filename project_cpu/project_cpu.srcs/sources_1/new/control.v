@@ -8,7 +8,7 @@ module Controller (
     output Ecall,
     output MemRead,
     output MemWrite,
-    output Branch,nBranch,blt,bge,bltu,bgeu,// Ϊ 1 ������Beq,Bneָ��
+    output Branch,nBranch,blt,bge,bltu,bgeu,lb,// Ϊ 1 ������Beq,Bneָ��
     output MemorIOtoReg,  // Ϊ 1 ������Ҫ�Ӵ洢���� I/O �����ݵ��Ĵ��� 
     output IORead,        // Ϊ 1 ������ I/O �� 
     output IOWrite        // Ϊ 1 ������ I/O д 
@@ -21,8 +21,9 @@ module Controller (
     assign bge= (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b101);
     assign bltu= (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b110);
     assign bgeu= (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b111);
-    assign Lw = (inst[6:0] == 7'b0010011 && inst[14:12] == 3'b10);
+    assign Lw = (inst[6:0] == 7'b0010011);
     assign Sw = (inst[6:0] == 7'b0100011);
+    assign lb= inst[6:0] == 7'b0010011&&inst[14:12] ==3'b0;
     assign Ecall = (button[0]==1'b0 && inst[31:0] == 32'h00000073);
     assign MemRead  = (inst[6:0] == 7'b0010011);
     assign MemWrite = ((Sw == 1) && (Alu_resultHigh[21:0] != 22'h3FFFFF)) ? 1'b1:1'b0;
