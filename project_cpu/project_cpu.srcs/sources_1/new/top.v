@@ -34,6 +34,9 @@ module top(
     wire Branch;
     wire nBranch;
     wire blt;
+    wire bge;
+    wire bltu;
+    wire bgeu;
     IFetch uIFetch(
         .clk(cpuClk),
         .rst(rst),
@@ -69,6 +72,9 @@ module top(
         .Branch(Branch),
         .nBranch(nBranch),
         .blt(blt),
+        .bge(bge);
+        .bltu(bltu);
+        .bgeu(bgeu);
         .MemorIOtoReg(MemorIOtoReg),
         .IORead(IORead),
         .IOWrite(IOWrite)
@@ -106,6 +112,9 @@ module top(
         .funct7(inst[31:25]), 
         .nBranch(nBranch),
         .blt(blt),
+        .bge(bge);
+        .bltu(bltu);
+        .bgeu(bgeu);
         .ALUSrc(ALUSrc), 
         .ALUResult(ALUResult),
         .zero(zero)
