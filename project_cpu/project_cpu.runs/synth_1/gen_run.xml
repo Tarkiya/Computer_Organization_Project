@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1717253835">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1717256356">
   <File Type="PA-TCL" Name="top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_reports.tcl"/>
@@ -140,5 +140,5 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="inst_memory"/>
   <BlockFileSet Type="BlockSrcs" Name="data_memory"/>
-  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="clock_cpu"/>
 </GenRun>

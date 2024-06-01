@@ -16,11 +16,12 @@ module top(
     wire cpuClk;//cpu时钟
     wire deClk;//消抖时钟
     wire segClk;//数码管显示时钟
-    clk_wiz_0 cpuclk1(
+    
+    clock_cpu ucpuclk(
         .clk_in1(clkIn),
         .clk_out1(cpuClk)
     );
-    clock_div slowclk(
+    clock_div usegclk(
         .clk(clkIn),
         .clk_2ms(segClk)
     );

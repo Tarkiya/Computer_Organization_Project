@@ -50,10 +50,10 @@ set_property used_in_implementation false [get_files -all e:/Computer_Organizati
 read_ip -quiet E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/data_memory/data_memory.xci
 set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/data_memory/data_memory_ooc.xdc]
 
-read_ip -quiet E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu.xci
+set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu_board.xdc]
+set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu.xdc]
+set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
