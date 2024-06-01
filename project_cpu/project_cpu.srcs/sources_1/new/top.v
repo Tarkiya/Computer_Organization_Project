@@ -23,7 +23,6 @@ module top(
     clock_div slowclk(
         .clk(clkIn),
         .clk_2ms(segClk)
-//        .clk_20ms(deClk)
     );
     
     // IFetch Ä£¿é
@@ -33,7 +32,7 @@ module top(
     wire result;
     wire Ecall;
     wire Branch,nBranch,Blt,Bge,Bltu,Bgeu;
-    wire Lb;
+    wire Lb,Lbu;
     IFetch uIFetch(
         .clk(cpuClk),
         .rst(rst),
@@ -77,6 +76,7 @@ module top(
         .Bltu(Bltu),
         .Bgeu(Bgeu),
         .Lb(Lb),
+        .Lbu(Lbu),
         .MemorIOtoReg(MemorIOtoReg),
         .IORead(IORead),
         .IOWrite(IOWrite)
@@ -145,6 +145,7 @@ module top(
         .ioRead(IORead),
         .ioWrite(IOWrite),
         .Lb(Lb),
+        .Lbu(Lbu),
         .alu_data(ALUResult),
         .m_rdata(m_rdata),
         .r_rdata(ReadData2),

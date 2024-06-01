@@ -5,7 +5,8 @@ module MemOrIO(
     input ioRead,
     input ioWrite,
     input Lb,
-    
+    input Lbu,
+
     input [31:0] alu_data,
     input [31:0] m_rdata,
     input [31:0] r_rdata,
@@ -30,11 +31,16 @@ module MemOrIO(
             if(mRead) begin  
                 r_wdata = m_rdata;  
             end  
-            else if(ioRead && ~Lb) begin  
-                r_wdata = io_rdata;  
-            end  
-            else if(ioRead && Lb) begin 
-                r_wdata = {{24{1'b0}}, io_rdata[15:8]};  
+            else if(ioRead) begin
+                if(Lb) begin
+                    r_wdata = {{24{io_rdata[15]}}, io_rdata[15:8]};
+                end
+                else if (Lbu) begin
+                    r_wdata = {{24{1'b0}}, io_rdata[15:8]};
+                end
+                else begin
+                    r_wdata = io_rdata;
+                end
             end  
         end
     end

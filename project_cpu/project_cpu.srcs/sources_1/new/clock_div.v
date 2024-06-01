@@ -1,7 +1,6 @@
 module clock_div(
     input clk,
-    output reg clk_2ms,
-    output reg clk_20ms
+    output reg clk_2ms
     );
 
     reg [31:0] cnt_2ms=0;
@@ -15,16 +14,6 @@ module clock_div(
           cnt_2ms<=0;
         end
       else cnt_2ms<=cnt_2ms+1;
-      end
-
-    always@(posedge clk)//20ms
-      begin
-        if(cnt_20ms==31'd1000000)
-          begin
-            clk_20ms<=~clk_20ms;
-            cnt_20ms<=0;
-          end
-        else cnt_20ms<=cnt_20ms+1;
       end
 
 endmodule

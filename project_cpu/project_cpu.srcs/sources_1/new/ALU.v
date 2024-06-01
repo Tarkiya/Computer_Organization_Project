@@ -25,6 +25,7 @@ module ALU(
               4'b0110: ALUControl=4'b0001; 
               4'b0001: ALUControl=4'b1111; // SLL
               4'b0101: ALUControl=4'b1110; // SRL
+              4'b0100: ALUControl=4'b1111; //xor
               default: ALUControl=4'b0000;
             endcase
           end
@@ -47,6 +48,7 @@ module ALU(
             4'b0001: ALUResult = ReadData1 | ALUData;  
             4'b1111: ALUResult = ReadData1 << ALUData;  
             4'b1110: ALUResult = ReadData1 >> ALUData;  
+            4'b1111: ALUResult = ReadData1 ^ ALUData;
             default: ALUResult = 32'b0;
         endcase
     end
