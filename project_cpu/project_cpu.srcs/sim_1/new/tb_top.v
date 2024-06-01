@@ -11,13 +11,13 @@ inst_memory uinst(
 
 initial begin
     clk = 1'b0;
-    forever #5 clk = ~clk;
+    forever #4 clk = ~clk;
 end
 
 initial begin
     addr = 14'h0;
-    repeat(20) #17 addr = addr + 4;
-    #20 $finish;
+    repeat(16) #8 addr = addr + 4 ;
+    #4 $finish;
 end
 
 endmodule

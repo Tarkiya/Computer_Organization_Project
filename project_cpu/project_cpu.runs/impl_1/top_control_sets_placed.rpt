@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Sat Jun  1 13:01:34 2024
+| Date         : Sat Jun  1 21:34:19 2024
 | Host         : LAPTOP-END1HUJS running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    38 |
-| Unused register locations in slices containing registers |    12 |
+| Number of unique control sets                            |    40 |
+| Unused register locations in slices containing registers |    27 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,66 +33,70 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              92 |           43 |
+| No           | No                    | No                     |              93 |           41 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              16 |            4 |
-| Yes          | No                    | No                     |              64 |           23 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              64 |           25 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             992 |          451 |
+| Yes          | Yes                   | No                     |            1008 |          437 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------------+---------------------------------+------------------+------------------+----------------+
-|           Clock Signal          |          Enable Signal          | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+---------------------------------+---------------------------------+------------------+------------------+----------------+
-|  cpuclk1/inst/clk_out1          |                                 |                  |                3 |              6 |
-| ~cpuclk1/inst/clk_out1          |                                 | uDecoder/p_0_in  |                4 |             16 |
-|  uIFetch/register_reg[0][15][0] |                                 |                  |                6 |             16 |
-|  uIFetch/E[0]                   |                                 |                  |                6 |             17 |
-|  rst_IBUF_BUFG                  |                                 |                  |               14 |             21 |
-|  n_0_1272_BUFG                  |                                 |                  |               14 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[13][31][0] | uDecoder/p_0_in  |               10 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[17][31][0] | uDecoder/p_0_in  |               10 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[18][31][0] | uDecoder/p_0_in  |               10 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[21][31][0] | uDecoder/p_0_in  |               13 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[16][31][0] | uDecoder/p_0_in  |               21 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[12][31][0] | uDecoder/p_0_in  |               16 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[24][31][0] | uDecoder/p_0_in  |               20 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[23][31][0] | uDecoder/p_0_in  |               16 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[26][31][0] | uDecoder/p_0_in  |               12 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[28][31][0] | uDecoder/p_0_in  |               10 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[29][31][0] | uDecoder/p_0_in  |               17 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[20][31][0] | uDecoder/p_0_in  |               13 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[2][31][0]  | uDecoder/p_0_in  |               15 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[25][31][0] | uDecoder/p_0_in  |               14 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[10][31][0] | uDecoder/p_0_in  |               18 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[19][31][0] | uDecoder/p_0_in  |               18 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[1][31][0]  | uDecoder/p_0_in  |               19 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[11][31][0] | uDecoder/p_0_in  |               11 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[27][31][0] | uDecoder/p_0_in  |               15 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[30][31][0] | uDecoder/p_0_in  |               16 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[15][31][0] | uDecoder/p_0_in  |               14 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[22][31][0] | uDecoder/p_0_in  |               13 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[6][31][0]  | uDecoder/p_0_in  |               15 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[5][31][0]  | uDecoder/p_0_in  |               15 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[7][31][0]  | uDecoder/p_0_in  |               18 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[9][31][0]  | uDecoder/p_0_in  |               17 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[8][31][0]  | uDecoder/p_0_in  |               12 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[3][31][0]  | uDecoder/p_0_in  |               11 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[4][31][0]  | uDecoder/p_0_in  |               13 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[31][31][0] | uDecoder/p_0_in  |               18 |             32 |
-|  cpuclk1/inst/clk_out1          | uIFetch/register_reg[14][31][0] | uDecoder/p_0_in  |               11 |             32 |
-|  cpuclk1/inst/clk_out1          | rst_IBUF_BUFG                   |                  |               23 |             64 |
-+---------------------------------+---------------------------------+------------------+------------------+----------------+
++--------------------------+----------------------------------+------------------+------------------+----------------+
+|       Clock Signal       |           Enable Signal          | Set/Reset Signal | Slice Load Count | Bel Load Count |
++--------------------------+----------------------------------+------------------+------------------+----------------+
+|  uIFetch/pc_reg[15]_2    |                                  |                  |                1 |              1 |
+|  cpuclk1/inst/clk_out1   |                                  |                  |                1 |              2 |
+| ~cpuclk1/inst/clk_out1   |                                  |                  |                2 |              4 |
+|  IORead_BUFG             |                                  |                  |                6 |             16 |
+| ~cpuclk1/inst/clk_out1   | uIFetch/pc[0]_i_1_n_1            | uDecoder/clear   |                4 |             16 |
+|  uIFetch/ledLeft[7]_0[0] |                                  |                  |                6 |             17 |
+|  rst_IBUF_BUFG           |                                  |                  |               15 |             21 |
+|  n_0_39_BUFG             |                                  |                  |               10 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[1][31]_0[0] | uDecoder/clear   |               16 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[10][31][0]  | uDecoder/clear   |               19 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[26][31][0]  | uDecoder/clear   |                9 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[28][31][0]  | uDecoder/clear   |               10 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[11][31][0]  | uDecoder/clear   |               15 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[13][31][0]  | uDecoder/clear   |               16 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[2][31][0]   | uDecoder/clear   |               11 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[25][31][0]  | uDecoder/clear   |               14 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[19][31][0]  | uDecoder/clear   |               13 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[8][31][0]   | uDecoder/clear   |               14 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[7][31][0]   | uDecoder/clear   |               19 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[9][31][0]   | uDecoder/clear   |               20 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[30][31][0]  | uDecoder/clear   |               15 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[4][31][0]   | uDecoder/clear   |               13 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[16][31][0]  | uDecoder/clear   |               18 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[24][31][0]  | uDecoder/clear   |               19 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[14][31][0]  | uDecoder/clear   |               15 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[17][31][0]  | uDecoder/clear   |               10 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[3][31][0]   | uDecoder/clear   |                9 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[5][31][0]   | uDecoder/clear   |               13 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[20][31][0]  | uDecoder/clear   |                9 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[12][31][0]  | uDecoder/clear   |               14 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[31][31][0]  | uDecoder/clear   |               19 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[18][31][0]  | uDecoder/clear   |               11 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[29][31][0]  | uDecoder/clear   |               13 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[6][31][0]   | uDecoder/clear   |               13 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[15][31][0]  | uDecoder/clear   |               12 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[27][31][0]  | uDecoder/clear   |               12 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[23][31][0]  | uDecoder/clear   |               18 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[21][31][0]  | uDecoder/clear   |               14 |             32 |
+|  cpuclk1/inst/clk_out1   | uIFetch/register_reg[22][31][0]  | uDecoder/clear   |               10 |             32 |
+|  cpuclk1/inst/clk_out1   | rst_IBUF_BUFG                    |                  |               25 |             64 |
++--------------------------+----------------------------------+------------------+------------------+----------------+
 
 
 +--------+-----------------------+
 | Fanout | Number of ControlSets |
 +--------+-----------------------+
-| 6      |                     1 |
+| 1      |                     1 |
+| 2      |                     1 |
+| 4      |                     1 |
 | 16+    |                    37 |
 +--------+-----------------------+
 
