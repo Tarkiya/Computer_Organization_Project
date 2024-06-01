@@ -30,11 +30,11 @@ module MemOrIO(
             if(mRead) begin  
                 r_wdata = m_rdata;  
             end  
-            else if(ioRead && ~lb) begin  
+            else if(ioRead && ~Lb) begin  
                 r_wdata = io_rdata;  
             end  
             else if(ioRead && Lb) begin 
-                r_wdata = {{24{0}}, io_rdata[15:8]};  
+                r_wdata = {{24{1'b0}}, io_rdata[15:8]};  
             end  
         end
     end

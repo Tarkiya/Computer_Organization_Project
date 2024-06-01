@@ -21,15 +21,16 @@ module top(
         .clk_out1(cpuClk)
     );
     clock_div slowclk(
-        .clk_2ms(segClk),
-        .clk_20ms(deClk)
+        .clk(clkIn),
+        .clk_2ms(segClk)
+//        .clk_20ms(deClk)
     );
     
     // IFetch 模块
     /////////////////////////////////////////////////////////////
     wire [31:0] imm32;
     wire [31:0] inst;
-    wire Result;
+    wire result;
     wire Ecall;
     wire Branch,nBranch,Blt,Bge,Bltu,Bgeu;
     wire Lb;
@@ -37,7 +38,7 @@ module top(
         .clk(cpuClk),
         .rst(rst),
         .imm32(imm32),
-        .Result(Result),
+        .result(result),
         .Ecall(Ecall),
         .Branch(Branch),
         .nBranch(nBranch),
@@ -61,7 +62,7 @@ module top(
     wire IOWrite;
     Controller uContrl (
         .inst(inst),
-        .Alu_ResultHigh(ALUResult[31:10]),
+        .Alu_resultHigh(ALUResult[31:10]),
         .button(debutton),
         .ALUOp(ALUOp),
         .ALUSrc(ALUSrc),
@@ -107,10 +108,10 @@ module top(
     ALU uAlu(
         .ReadData1(ReadData1),
         .ReadData2(ReadData2),
-        .imm32(imm32),
+        .Imm32(imm32),
         .ALUOp(ALUOp), 
-        .funct3(inst[14:12]), 
-        .funct7(inst[31:25]), 
+        .Funct3(inst[14:12]), 
+        .Funct7(inst[31:25]), 
         .ALUSrc(ALUSrc),
         .Branch(Branch),
         .nBranch(nBranch),
@@ -119,7 +120,7 @@ module top(
         .Bltu(Bltu),
         .Bgeu(Bgeu),
         .ALUResult(ALUResult),
-        .Result(Result)
+        .result(result)
     );
     
     // Memory 模块
@@ -158,27 +159,27 @@ module top(
     // 按键消抖
     /////////////////////////////////////////////////////////////
     debouncer debouncer0(
-        .slowclk(deClk),
+        .slowclk(cpuClk),
         .button(button[0]),
         .signal(debutton[0])
     );
     debouncer debouncer1(
-        .slowclk(deClk),
+        .slowclk(cpuClk),
         .button(button[1]),
         .signal(debutton[1])
     );
     debouncer debouncer2(
-        .slowclk(deClk),
+        .slowclk(cpuClk),
         .button(button[2]),
         .signal(debutton[2])
     );
     debouncer debouncer3(
-        .slowclk(deClk),
+        .slowclk(cpuClk),
         .button(button[3]),
         .signal(debutton[3])
     );
     debouncer debouncer4(
-        .slowclk(deClk),
+        .slowclk(cpuClk),
         .button(button[4]),
         .signal(debutton[4])
     );
