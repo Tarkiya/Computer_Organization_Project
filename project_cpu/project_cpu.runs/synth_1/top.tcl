@@ -29,6 +29,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo e:/Computer_Organization_Project/project_cpu/project_cpu.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
+add_files c:/Users/Tarkiya/Desktop/testcase/prgmip32.coe
 read_verilog -library xil_defaultlib {
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/Decoder.v

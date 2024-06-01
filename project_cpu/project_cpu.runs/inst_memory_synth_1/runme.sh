@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Tarkiya/Desktop/project_cpu/project_cpu.runs/inst_memory_synth_1'
+HD_PWD='E:/Computer_Organization_Project/project_cpu/project_cpu.runs/inst_memory_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

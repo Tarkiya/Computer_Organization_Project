@@ -77,6 +77,8 @@ module top(
     wire [31:0] m_rdata;
     wire [31:0] m_wdata;
     wire [31:0] r_wdata;
+    wire [31:0] io_rdata;
+    wire [31:0] io_wdata;
     wire [31:0] ReadData1;
     wire [31:0] ReadData2;
     Decoder uDecoder(
@@ -129,10 +131,10 @@ module top(
         .alu_data(ALUResult),
         .m_rdata(m_rdata),
         .r_rdata(ReadData2),
-        .io_rdata({switchLeft,switchRight}),
+        .io_rdata(io_rdata),
         .m_wdata(m_wdata),
         .r_wdata(r_wdata),
-        .io_wdata({ledLeft,ledRight}),
+        .io_wdata(io_wdata),
         .LEDCtrl(LEDCtrl),
         .SwitchCtrl(SwitchCtrl)
     );
@@ -164,12 +166,21 @@ module top(
         .button(button[4]),
         .signal(debutton[4])
     );
-        
+    
+    // switch输入
+    /////////////////////////////////////////////////////////////
+    switch uswitch(
+        .en(SwitchCtrl),
+        .switchLeft(switchLeft),
+        .switchRight(switchRight),
+        .io_rdata(io_rdata)
+    );
+    
     // 数码管显示
     /////////////////////////////////////////////////////////////
     seg useg(
         .rst(rst),
-        .in({{16{ledLeft[7]}},ledLeft,ledRight}),
+        .in(io_wdata),
         .en(LEDCtrl),
         .clk(segClk),
         .seg_ctrl(segCtrl),
@@ -181,7 +192,7 @@ module top(
     /////////////////////////////////////////////////////////////
     led uled(
         .rst(rst),
-        .in({ledLeft,ledRight}),
+        .in(io_wdata[15:0]),
         .en(LEDCtrl),
         .ledLeft(ledLeft),
         .ledRight(ledRight)
