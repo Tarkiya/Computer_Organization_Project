@@ -1,14 +1,14 @@
 module ALU(
     input signed [31:0] ReadData1,
     input signed [31:0] ReadData2,
-    input [31:0] imm32,
+    input [31:0] Imm32,
     input [1:0] ALUOp,
-    input [2:0] funct3,
-    input [6:0] funct7,
+    input [2:0] Funct3,
+    input [6:0] Funct7,
     input ALUSrc,
     input Branch,nBranch,Blt,Bge,Bltu,Bgeu,
     output reg [31:0] ALUResult,
-    output reg zero
+    output reg Result
     );
     reg [3:0] ALUControl;
     reg [31:0] ALUData;
@@ -18,7 +18,7 @@ module ALU(
           2'b00: ALUControl=4'b0010;
           2'b01: ALUControl=4'b0110;
           2'b10: begin
-            case ({funct7[5],funct3[2:0]})
+            case ({Funct7[5],Funct3[2:0]})
               4'b0000: ALUControl=4'b0010;
               4'b1000: ALUControl=4'b0110;
               4'b0111: ALUControl=4'b0000;
@@ -36,7 +36,7 @@ module ALU(
         if(ALUSrc == 1'b0) 
             ALUData = ReadData2;
         else 
-            ALUData = imm32;
+            ALUData = Imm32;
     end
     
     always @(*) begin
@@ -53,16 +53,16 @@ module ALU(
     
     always @(*) begin
         if (Bltu) 
-            zero = ($unsigned(ReadData1) < $unsigned(ALUData));
+            Result = ($unsigned(ReadData1) < $unsigned(ALUData));
         else if (Bgeu) 
-            zero = ($unsigned(ReadData1) >= $unsigned(ALUData));
+            Result = ($unsigned(ReadData1) >= $unsigned(ALUData));
         else if (Blt) 
-            zero = (ReadData1 < ALUData);
+            Result = (ReadData1 < ALUData);
         else if (Bge) 
-            zero = (ReadData1 >= ALUData);
+            Result = (ReadData1 >= ALUData);
         else if (nBranch) 
-            zero = (ALUResult != 32'b0);
+            Result = (ALUResult != 32'b0);
         else if (Branch)
-            zero = (ALUResult == 32'b0);
+            Result = (ALUResult == 32'b0);
     end
 endmodule
