@@ -8,7 +8,7 @@ module ALU(
     input ALUSrc,
     input Branch,nBranch,Blt,Bge,Bltu,Bgeu,
     output reg [31:0] ALUResult,
-    output reg zero
+    output reg result
     );
     reg [3:0] ALUControl;
     reg [31:0] ALUData;
@@ -53,16 +53,16 @@ module ALU(
     
     always @(*) begin
         if (Bltu) 
-            zero = ($unsigned(ReadData1) < $unsigned(ALUData));
+            result = ($unsigned(ReadData1) < $unsigned(ALUData));
         else if (Bgeu) 
-            zero = ($unsigned(ReadData1) >= $unsigned(ALUData));
+            result = ($unsigned(ReadData1) >= $unsigned(ALUData));
         else if (Blt) 
-            zero = (ReadData1 < ALUData);
+            result = (ReadData1 < ALUData);
         else if (Bge) 
-            zero = (ReadData1 >= ALUData);
+            result = (ReadData1 >= ALUData);
         else if (nBranch) 
-            zero = (ALUResult != 32'b0);
+            result = (ALUResult != 32'b0);
         else if (Branch)
-            zero = (ALUResult == 32'b0);
+            result = (ALUResult == 32'b0);
     end
 endmodule

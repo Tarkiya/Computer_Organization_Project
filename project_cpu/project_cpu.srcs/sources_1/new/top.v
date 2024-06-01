@@ -29,7 +29,7 @@ module top(
     /////////////////////////////////////////////////////////////
     wire [31:0] imm32;
     wire [31:0] inst;
-    wire zero;
+    wire result;
     wire Ecall;
     wire Branch,nBranch,Blt,Bge,Bltu,Bgeu;
     wire Lb;
@@ -37,7 +37,7 @@ module top(
         .clk(cpuClk),
         .rst(rst),
         .imm32(imm32),
-        .zero(zero),
+        .result(result),
         .Ecall(Ecall),
         .Branch(Branch),
         .nBranch(nBranch),
@@ -119,7 +119,7 @@ module top(
         .Bltu(Bltu),
         .Bgeu(Bgeu),
         .ALUResult(ALUResult),
-        .zero(zero)
+        .result(result)
     );
     
     // Memory Ä£¿é
