@@ -8,15 +8,19 @@ module Controller (
     output Ecall,
     output MemRead,
     output MemWrite,
-    output Branch,nBranch,// Îª 1 ±íÃ÷ÊÇBeq,BneÖ¸Áî
-    output MemorIOtoReg,  // Îª 1 ±íÃ÷ÐèÒª´Ó´æ´¢Æ÷»ò I/O ¶ÁÊý¾Ýµ½¼Ä´æÆ÷ 
-    output IORead,        // Îª 1 ±íÃ÷ÊÇ I/O ¶Á 
-    output IOWrite        // Îª 1 ±íÃ÷ÊÇ I/O Ð´ 
+    output Branch,nBranch,blt,bge,bltu,bgeu,// Îª 1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Beq,BneÖ¸ï¿½ï¿½
+    output MemorIOtoReg,  // Îª 1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ó´æ´¢ï¿½ï¿½ï¿½ï¿½ I/O ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½Ä´ï¿½ï¿½ï¿½ 
+    output IORead,        // Îª 1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ I/O ï¿½ï¿½ 
+    output IOWrite        // Îª 1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ I/O Ð´ 
 );
-    wire Lw;// Îª 1 ±íÊ¾ÊÇlwÖ¸Áî
-    wire Sw;// Îª 1 ±íÊ¾ÊÇswÖ¸Áî
+    wire Lw;// Îª 1 ï¿½ï¿½Ê¾ï¿½ï¿½lwÖ¸ï¿½ï¿½
+    wire Sw;// Îª 1 ï¿½ï¿½Ê¾ï¿½ï¿½swÖ¸ï¿½ï¿½
     assign Branch = (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b0);
     assign nBranch = (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b1);
+    assign blt= (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b100);
+    assign bge= (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b101);
+    assign bltu= (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b110);
+    assign bgeu= (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b111);
     assign Lw = (inst[6:0] == 7'b0010011 && inst[14:12] == 3'b10);
     assign Sw = (inst[6:0] == 7'b0100011);
     assign Ecall = (button[0]==1'b0 && inst[31:0] == 32'h00000073);
@@ -32,7 +36,7 @@ always @* begin
             begin
             ALUOp = 2'b01;
             ALUSrc = 1'b0;
-            RegWrite = 1'b0; //B bne
+            RegWrite = 1'b0; //B bne blt
             end
         7'b0110011: 
             begin
