@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Sat Jun  1 00:40:51 2024
+-- Date        : Sun Jun  2 02:11:03 2024
 -- Host        : LAPTOP-END1HUJS running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top inst_memory -prefix
---               inst_memory_ inst_memory_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub
+--               E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/inst_memory/inst_memory_stub.vhdl
 -- Design      : inst_memory
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcsg324-1

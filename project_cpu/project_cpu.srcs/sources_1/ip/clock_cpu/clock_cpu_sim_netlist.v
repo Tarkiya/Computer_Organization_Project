@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
 // Date        : Sat Jun  1 23:39:58 2024
 // Host        : LAPTOP-END1HUJS running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top clock_cpu -prefix
+//               clock_cpu_ clock_cpu_sim_netlist.v
 // Design      : clock_cpu
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -27,7 +27,6 @@ module clock_cpu
         .clk_out1(clk_out1));
 endmodule
 
-(* ORIG_REF_NAME = "clock_cpu_clk_wiz" *) 
 module clock_cpu_clock_cpu_clk_wiz
    (clk_out1,
     clk_in1);

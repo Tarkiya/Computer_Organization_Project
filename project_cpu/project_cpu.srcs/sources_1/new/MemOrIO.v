@@ -4,6 +4,7 @@ module MemOrIO(
     input mWrite,
     input ioRead,
     input ioWrite,
+    input memIOtoReg,
     input Lb,
     input Lbu,
 
@@ -20,22 +21,25 @@ module MemOrIO(
     output SwitchCtrl
 );
     
-    // lw 指令，从 memory 或 IO 读入数据，写入寄存器
+    // 从 memory 或 IO 读入数据，写入寄存器
     always @(*) begin
         if(ecall == 1'b1) begin
             case(alu_data[3:0])
                 4'b0101: r_wdata = io_rdata;
             endcase
         end
-        else begin  
-            if(mRead) begin  
+        else if(memIOtoReg == 1'b0) begin
+            r_wdata = alu_data;
+        end
+        else begin
+            if(mRead == 1'b1) begin  
                 r_wdata = m_rdata;  
             end  
-            else if(ioRead) begin
-                if(Lb) begin
+            else if(ioRead == 1'b1) begin
+                if(Lb == 1'b1) begin
                     r_wdata = {{24{io_rdata[15]}}, io_rdata[15:8]};
                 end
-                else if (Lbu) begin
+                else if (Lbu == 1'b1) begin
                     r_wdata = {{24{1'b0}}, io_rdata[15:8]};
                 end
                 else begin
@@ -48,7 +52,7 @@ module MemOrIO(
     assign LEDCtrl = ioWrite;
     assign SwitchCtrl = ioRead;
     
-    // sw 指令，从寄存器读入数据，写入 memory 或者 io
+    // 从寄存器读入数据，写入 memory 或者 io
     always @(*) begin
         if(ecall == 1'b1) begin
             case(alu_data[3:0])

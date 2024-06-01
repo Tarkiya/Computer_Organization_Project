@@ -21,12 +21,12 @@ module Controller (
     assign Bge= (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b101);
     assign Bltu= (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b110);
     assign Bgeu= (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b111);
-    assign Lw = (inst[6:0] == 7'b0010011);
+    assign Lw = (inst[6:0] == 7'b0000011);
     assign Sw = (inst[6:0] == 7'b0100011);
-    assign Lb= inst[6:0] == 7'b0010011 && inst[14:12] ==3'b0;
-    assign Lbu= inst[6:0] == 7'b0010011 && inst[14:12] ==3'b100;
+    assign Lb= inst[6:0] == 7'b0000011 && inst[14:12] ==3'b0;
+    assign Lbu= inst[6:0] == 7'b0000011 && inst[14:12] ==3'b100;
     assign Ecall = (button[0]==1'b0 && inst[31:0] == 32'h00000073);
-    assign MemRead  = (inst[6:0] == 7'b0010011);
+    assign MemRead  = (inst[6:0] == 7'b0000011);
     assign MemWrite = ((Sw == 1) && (Alu_resultHigh[21:0] != 22'h3FFFFF)) ? 1'b1:1'b0;
     assign MemorIOtoReg = (IORead || MemRead);
     assign IORead = (Lw && Alu_resultHigh[21:0] == 22'h3FFFFF);

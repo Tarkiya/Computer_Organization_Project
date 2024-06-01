@@ -16,6 +16,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -30,6 +31,7 @@ set_property target_language Verilog [current_project]
 set_property ip_output_repo e:/Computer_Organization_Project/project_cpu/project_cpu.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 add_files C:/Users/Tarkiya/Desktop/testcase/prgmip32.coe
+add_files e:/Computer_Organization_Project/project_cpu/prgmip32.coe
 read_verilog -library xil_defaultlib {
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/Decoder.v
@@ -44,16 +46,16 @@ read_verilog -library xil_defaultlib {
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/switch.v
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v
 }
+read_ip -quiet e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu.xci
+set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu_board.xdc]
+set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu.xdc]
+set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu_ooc.xdc]
+
 read_ip -quiet E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/inst_memory/inst_memory.xci
 set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/inst_memory/inst_memory_ooc.xdc]
 
 read_ip -quiet E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/data_memory/data_memory.xci
 set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/data_memory/data_memory_ooc.xdc]
-
-read_ip -quiet e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu.xci
-set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu_board.xdc]
-set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu.xdc]
-set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -66,6 +68,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc
 set_property used_in_implementation false [get_files E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 
 synth_design -top top -part xc7a35tcsg324-1
 

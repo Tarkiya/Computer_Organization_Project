@@ -21,6 +21,11 @@ module top(
         .clk_in1(clkIn),
         .clk_out1(cpuClk)
     );
+//    clock_clk uclkclk(
+//        .clk_in(clkIn),
+//        .rst(rst),
+//        .clk_out(cpuClk)
+//    );
     clock_div usegclk(
         .clk(clkIn),
         .clk_2ms(segClk)
@@ -145,6 +150,7 @@ module top(
         .mWrite(MemWrite),
         .ioRead(IORead),
         .ioWrite(IOWrite),
+        .memIOtoReg(MemorIOtoReg),
         .Lb(Lb),
         .Lbu(Lbu),
         .alu_data(ALUResult),

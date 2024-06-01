@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
 -- Date        : Sat Jun  1 23:39:58 2024
 -- Host        : LAPTOP-END1HUJS running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top clock_cpu -prefix
+--               clock_cpu_ clock_cpu_sim_netlist.vhdl
 -- Design      : clock_cpu
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,8 +19,6 @@ entity clock_cpu_clock_cpu_clk_wiz is
     clk_out1 : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of clock_cpu_clock_cpu_clk_wiz : entity is "clock_cpu_clk_wiz";
 end clock_cpu_clock_cpu_clk_wiz;
 
 architecture STRUCTURE of clock_cpu_clock_cpu_clk_wiz is
