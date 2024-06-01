@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat Jun  1 20:41:44 2024
+# Process ID: 9240
+# Current directory: E:/Computer_Organization_Project/project_cpu/project_cpu.runs/inst_memory_synth_1
+# Command line: vivado.exe -log inst_memory.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source inst_memory.tcl
+# Log file: E:/Computer_Organization_Project/project_cpu/project_cpu.runs/inst_memory_synth_1/inst_memory.vds
+# Journal file: E:/Computer_Organization_Project/project_cpu/project_cpu.runs/inst_memory_synth_1\vivado.jou
+#-----------------------------------------------------------
+source inst_memory.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP inst_memory, cache-ID = 955927ccbdb5f571.
+INFO: [Common 17-206] Exiting Vivado at Sat Jun  1 20:41:50 2024...
