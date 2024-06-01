@@ -8,15 +8,16 @@ module Controller (
     output Ecall,
     output MemRead,
     output MemWrite,
-    output Branch,nBranch,// 为 1 表明是Beq,Bne指令
-    output MemorIOtoReg,  // 为 1 表明需要从存储器或 I/O 读数据到寄存器 
-    output IORead,        // 为 1 表明是 I/O 读 
-    output IOWrite        // 为 1 表明是 I/O 写 
+    output Branch,nBranch,blt// 为 1 锟斤拷锟斤拷锟斤拷Beq,Bne指锟斤拷
+    output MemorIOtoReg,  // 为 1 锟斤拷锟斤拷锟斤拷要锟接存储锟斤拷锟斤拷 I/O 锟斤拷锟斤拷锟捷碉拷锟侥达拷锟斤拷 
+    output IORead,        // 为 1 锟斤拷锟斤拷锟斤拷 I/O 锟斤拷 
+    output IOWrite        // 为 1 锟斤拷锟斤拷锟斤拷 I/O 写 
 );
-    wire Lw;// 为 1 表示是lw指令
-    wire Sw;// 为 1 表示是sw指令
+    wire Lw;// 为 1 锟斤拷示锟斤拷lw指锟斤拷
+    wire Sw;// 为 1 锟斤拷示锟斤拷sw指锟斤拷
     assign Branch = (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b0);
     assign nBranch = (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b1);
+    assign blt= (inst[6:0] == 7'b1100011 && inst[14:12] == 3'b100);
     assign Lw = (inst[6:0] == 7'b0010011 && inst[14:12] == 3'b10);
     assign Sw = (inst[6:0] == 7'b0100011);
     assign Ecall = (button[0]==1'b0 && inst[31:0] == 32'h00000073);

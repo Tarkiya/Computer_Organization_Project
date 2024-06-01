@@ -33,6 +33,7 @@ module top(
     wire Ecall;
     wire Branch;
     wire nBranch;
+    wire blt;
     IFetch uIFetch(
         .clk(cpuClk),
         .rst(rst),
@@ -67,6 +68,7 @@ module top(
         .MemWrite(MemWrite),
         .Branch(Branch),
         .nBranch(nBranch),
+        .blt(blt),
         .MemorIOtoReg(MemorIOtoReg),
         .IORead(IORead),
         .IOWrite(IOWrite)
