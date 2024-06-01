@@ -37,6 +37,7 @@ module top(
     wire bge;
     wire bltu;
     wire bgeu;
+    wire lb;
     IFetch uIFetch(
         .clk(cpuClk),
         .rst(rst),
