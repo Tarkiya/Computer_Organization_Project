@@ -16,6 +16,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -41,6 +42,7 @@ read_verilog -library xil_defaultlib {
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/m_data.v
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v
+  E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/switch.v
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v
 }
 read_ip -quiet E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/inst_memory/inst_memory.xci

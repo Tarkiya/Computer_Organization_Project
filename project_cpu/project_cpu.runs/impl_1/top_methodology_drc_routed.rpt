@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Sat Jun  1 12:44:04 2024
+| Date         : Sat Jun  1 13:02:00 2024
 | Host         : LAPTOP-END1HUJS running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
 | Design       : top
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 70
+             Violations found: 86
 +-----------+----------+-------------------+------------+
 | Rule      | Severity | Description       | Violations |
 +-----------+----------+-------------------+------------+
-| TIMING-20 | Warning  | Non-clocked latch | 70         |
+| TIMING-20 | Warning  | Non-clocked latch | 86         |
 +-----------+----------+-------------------+------------+
 
 2. REPORT DETAILS
@@ -380,6 +380,86 @@ Related violations: <none>
 TIMING-20#70 Warning
 Non-clocked latch  
 The latch uMemOrIO/r_wdata_reg[9] cannot be properly analyzed as its control pin uMemOrIO/r_wdata_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#71 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[0] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#72 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[10] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#73 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[11] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#74 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[12] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#75 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[13] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[13]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#76 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[14] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[14]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#77 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[1] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#78 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[20] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[20]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#79 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[2] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#80 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[3] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#81 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[4] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#82 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[5] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#83 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[6] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#84 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[7] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#85 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[8] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#86 Warning
+Non-clocked latch  
+The latch uswitch/io_rdata_reg[9] cannot be properly analyzed as its control pin uswitch/io_rdata_reg[9]/G is not reached by a timing clock
 Related violations: <none>
 
 

@@ -7,7 +7,7 @@ module m_data(
     output [31:0] dout
 );
     data_memory udata(
-        .clka(clk),
+        .clka(~clk),
         .wea(MemWrite),
         .addra(addr[15:2]),
         .dina(din),

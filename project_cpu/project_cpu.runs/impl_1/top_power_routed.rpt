@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Sat Jun  1 12:44:05 2024
+| Date             : Sat Jun  1 13:02:01 2024
 | Host             : LAPTOP-END1HUJS running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.182        |
+| Total On-Chip Power (W)  | 0.187        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.112        |
-| Device Static (W)        | 0.070        |
+| Dynamic (W)              | 0.114        |
+| Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 4.8          |
 | Max Ambient (C)          | 84.1         |
 | Junction Temperature (C) | 25.9         |
@@ -52,20 +52,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        5 |       --- |             --- |
-| Slice Logic    |     0.002 |     2624 |       --- |             --- |
-|   LUT as Logic |     0.002 |     1065 |     20800 |            5.12 |
+| Clocks         |    <0.001 |        5 |       --- |             --- |
+| Slice Logic    |     0.003 |     2644 |       --- |             --- |
+|   LUT as Logic |     0.003 |     1071 |     20800 |            5.15 |
 |   F7/F8 Muxes  |    <0.001 |      256 |     32600 |            0.79 |
 |   CARRY4       |    <0.001 |       12 |      8150 |            0.15 |
-|   Register     |    <0.001 |     1148 |     41600 |            2.76 |
+|   Register     |    <0.001 |     1164 |     41600 |            2.80 |
 |   BUFG         |    <0.001 |        2 |        32 |            6.25 |
-|   Others       |     0.000 |       94 |       --- |             --- |
-| Signals        |     0.004 |     2167 |       --- |             --- |
+|   Others       |     0.000 |       96 |       --- |             --- |
+| Signals        |     0.005 |     2184 |       --- |             --- |
 | Block RAM      |     0.005 |       29 |        50 |           58.00 |
 | PLL            |     0.100 |        1 |         5 |           20.00 |
 | I/O            |    <0.001 |       58 |       210 |           27.62 |
-| Static Power   |     0.070 |          |           |                 |
-| Total          |     0.182 |          |           |                 |
+| Static Power   |     0.073 |          |           |                 |
+| Total          |     0.187 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +75,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.029 |       0.019 |      0.010 |
+| Vccint    |       1.000 |     0.031 |       0.021 |      0.010 |
 | Vccaux    |       1.800 |     0.064 |       0.051 |      0.013 |
-| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -146,11 +146,11 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| top                                            |     0.112 |
+| top                                            |     0.114 |
 |   cpuclk1                                      |     0.100 |
 |     inst                                       |     0.100 |
 |   uAlu                                         |    <0.001 |
-|   uDecoder                                     |     0.003 |
+|   uDecoder                                     |     0.004 |
 |   uIFetch                                      |     0.005 |
 |     uinst                                      |     0.003 |
 |       U0                                       |     0.003 |
@@ -229,6 +229,7 @@ Table of Contents
 |               ramloop[9].ram.r                 |    <0.001 |
 |                 prim_noinit.ram                |    <0.001 |
 |   useg                                         |     0.000 |
+|   uswitch                                      |    <0.001 |
 +------------------------------------------------+-----------+
 
 
