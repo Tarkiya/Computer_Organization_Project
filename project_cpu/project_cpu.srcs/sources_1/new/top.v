@@ -104,6 +104,8 @@ module top(
         .ALUOp(ALUOp), 
         .funct3(inst[14:12]), 
         .funct7(inst[31:25]), 
+        .nBranch(nBranch),
+        .blt(blt),
         .ALUSrc(ALUSrc), 
         .ALUResult(ALUResult),
         .zero(zero)

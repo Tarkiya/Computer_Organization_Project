@@ -33,7 +33,7 @@ always @* begin
             begin
             ALUOp = 2'b01;
             ALUSrc = 1'b0;
-            RegWrite = 1'b0; //B bne
+            RegWrite = 1'b0; //B bne blt
             end
         7'b0110011: 
             begin

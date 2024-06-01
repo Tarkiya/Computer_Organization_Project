@@ -6,6 +6,8 @@ module ALU(
     input [2:0] funct3,
     input [6:0] funct7,
     input ALUSrc,
+    input blt,
+    input nBranch,
     output reg [31:0] ALUResult,
     output reg zero
     );
@@ -23,7 +25,8 @@ module ALU(
               4'b1000: ALUControl=4'b0110;
               4'b0111: ALUControl=4'b0000;
               4'b0110: ALUControl=4'b0001; 
-              4'b0001: ALUControl=4'b1111;
+              4'b0001: ALUControl=4'b1111;//����
+              4'b0101: ALUControl=4'b1110;//�߼�����
               default: ALUControl=1'b0;
             endcase
           end
@@ -42,12 +45,13 @@ module ALU(
             4'b0000: ALUResult = ReadData1 & ALUData;
             4'b0001: ALUResult = ReadData1 | ALUData;  
             4'b1111: ALUResult = ReadData1 << ALUData;  
+            4'b1110: ALUResult = ReadData1 >> ALUData;  
             default: ALUResult = 1'b0;
           endcase
       end
     
     always @(*) begin
-        if (ALUResult == 32'b0) zero = 1'b1;
+        if (ALUResult == 32'b0|| nBranch && ALUResult != 32'b0|| blt && ALUResult<0) zero = 1'b1;
         else zero = 1'b0;
     end
 endmodule
