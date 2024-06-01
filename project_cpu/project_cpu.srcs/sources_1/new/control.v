@@ -1,6 +1,7 @@
 module Controller (
     input [31:0] inst,
     input [21:0] Alu_resultHigh,
+    input [3:0] Alu_resultLow, 
     input [4:0] button,
     output reg [1:0]ALUOp,
     output reg ALUSrc,
@@ -29,8 +30,8 @@ module Controller (
     assign MemRead  = (inst[6:0] == 7'b0000011);
     assign MemWrite = ((Sw == 1) && (Alu_resultHigh[21:0] != 22'h3FFFFF)) ? 1'b1:1'b0;
     assign MemorIOtoReg = (IORead || MemRead);
-    assign IORead = (Lw && Alu_resultHigh[21:0] == 22'h3FFFFF);
-    assign IOWrite = (Sw && Alu_resultHigh[21:0] == 22'h3FFFFF);
+    assign IORead = ((Lw && Alu_resultHigh[21:0] == 22'h3FFFFF)||(inst[31:0] == 32'h00000073 && (Alu_resultLow[3:0] == 4'b0101 || Alu_resultLow[3:0] == 4'b0110)));
+    assign IOWrite = (Sw && Alu_resultHigh[21:0] == 22'h3FFFFF||(inst[31:0] == 32'h00000073 && (Alu_resultLow[3:0] == 4'b0001)));
 
 always @* begin
     case(inst[6:0])
@@ -76,11 +77,17 @@ always @* begin
             ALUSrc = 1'b0;
             RegWrite = 1'b1; //J jal
             end
-        default:
+        7'b1110011:
             begin
             ALUOp = 2'b00;
             ALUSrc = 1'b0;
-            RegWrite = 1'b0;
+            RegWrite = 1'b1; //ecall
+            end
+        default:
+            begin
+            ALUOp = 2'b00;
+            ALUSrc = 1'b1;
+            RegWrite = 1'b1;
             end
     endcase
 end

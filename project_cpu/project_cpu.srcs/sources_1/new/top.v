@@ -68,6 +68,7 @@ module top(
     Controller uContrl (
         .inst(inst),
         .Alu_resultHigh(ALUResult[31:10]),
+        .Alu_resultLow(ALUResult[3:0]),
         .button(debutton),
         .ALUOp(ALUOp),
         .ALUSrc(ALUSrc),

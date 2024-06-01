@@ -16,7 +16,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -30,8 +29,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo e:/Computer_Organization_Project/project_cpu/project_cpu.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files C:/Users/Tarkiya/Desktop/testcase/prgmip32.coe
-add_files e:/Computer_Organization_Project/project_cpu/prgmip32.coe
+add_files E:/Computer_Organization_Project/project_cpu/prgmip32.coe
 read_verilog -library xil_defaultlib {
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/Decoder.v
@@ -46,7 +44,7 @@ read_verilog -library xil_defaultlib {
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/switch.v
   E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v
 }
-read_ip -quiet e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu.xci
+read_ip -quiet E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu.xci
 set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu_board.xdc]
 set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu.xdc]
 set_property used_in_implementation false [get_files -all e:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu_ooc.xdc]

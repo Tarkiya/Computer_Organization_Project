@@ -16,9 +16,9 @@ module Decoder(
     wire [4:0] rd;
     
     assign opcode = inst[6:0];
-    assign rs1 = (ecall == 1'b1 ? 5'b10001 : inst[24:20]);
-    assign rs2 = (ecall == 1'b1 ? 5'b01010 : inst[19:15]);
-    assign rd  = (ecall == 1'b1 ? 5'b10001 : inst[11:7]);
+    assign rs1 = (inst[31:0] == 32'h00000073 ? 5'b10001 : inst[24:20]);
+    assign rs2 = (inst[31:0] == 32'h00000073 ? 5'b01010 : inst[19:15]);
+    assign rd  = (inst[31:0] == 32'h00000073 ? 5'b01010 : inst[11:7]);
     
     always @(*) 
       begin
