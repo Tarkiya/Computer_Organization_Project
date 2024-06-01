@@ -4,7 +4,8 @@ module MemOrIO(
     input mWrite,
     input ioRead,
     input ioWrite,
-    input lb,
+    input Lb,
+    input Lbu,
     
     input [31:0] alu_data,
     input [31:0] m_rdata,
@@ -19,7 +20,6 @@ module MemOrIO(
     output SwitchCtrl
 );
     
-    // lw 指令，从 memory 或 IO 读入数据，写入寄存器
     always @(*) begin
         if(ecall == 1'b1) begin
             case(alu_data[3:0])
@@ -27,23 +27,26 @@ module MemOrIO(
             endcase
         end
         else begin  
-            if(mRead == 1'b1) begin  
+            if(mRead) begin  
                 r_wdata = m_rdata;  
             end  
-            else if(ioRead == 1'b1 && ~lb) begin  
-                r_wdata = io_rdata;  
+            else if(ioRead) begin  
+                if(Lb) begin
+                    r_wdata = {{24{io_rdata[15]}}, io_rdata[15:8]};  
+                end 
+                else if (Lbu) begin
+                    r_wdata = {{24{1'b0}}, io_rdata[15:8]};  
+                end
+                else begin
+                    r_wdata = io_rdata;  
+                end
             end  
-            else if(ioRead == 1'b1 && lb) begin // 这里我添加了 ioRead == 1'b1 以保持与前一个条件的一致性  
-                r_wdata = {{24{0}}, io_rdata[15:8]};  
-            end  
-            // 如果需要，可以添加更多的 else if 或 else 语句  
         end
     end
     
     assign LEDCtrl = ioWrite;
     assign SwitchCtrl = ioRead;
     
-    // sw 指令，从寄存器读入数据，写入 memory 或者 io
     always @(*) begin
         if(ecall == 1'b1) begin
             case(alu_data[3:0])

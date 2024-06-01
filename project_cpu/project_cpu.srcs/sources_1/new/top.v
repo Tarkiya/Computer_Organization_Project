@@ -29,7 +29,7 @@ module top(
     /////////////////////////////////////////////////////////////
     wire [31:0] imm32;
     wire [31:0] inst;
-    wire result;
+    wire Result;
     wire Ecall;
     wire Branch,nBranch,Blt,Bge,Bltu,Bgeu;
     wire Lb;
@@ -37,7 +37,7 @@ module top(
         .clk(cpuClk),
         .rst(rst),
         .imm32(imm32),
-        .result(result),
+        .Result(Result),
         .Ecall(Ecall),
         .Branch(Branch),
         .nBranch(nBranch),
@@ -61,7 +61,7 @@ module top(
     wire IOWrite;
     Controller uContrl (
         .inst(inst),
-        .Alu_resultHigh(ALUResult[31:10]),
+        .Alu_ResultHigh(ALUResult[31:10]),
         .button(debutton),
         .ALUOp(ALUOp),
         .ALUSrc(ALUSrc),
@@ -76,6 +76,7 @@ module top(
         .Bltu(Bltu),
         .Bgeu(Bgeu),
         .Lb(Lb),
+        .Lbu(Lbu),
         .MemorIOtoReg(MemorIOtoReg),
         .IORead(IORead),
         .IOWrite(IOWrite)
@@ -119,7 +120,7 @@ module top(
         .Bltu(Bltu),
         .Bgeu(Bgeu),
         .ALUResult(ALUResult),
-        .result(result)
+        .Result(Result)
     );
     
     // Memory Ä£¿é
@@ -143,6 +144,8 @@ module top(
         .mWrite(MemWrite),
         .ioRead(IORead),
         .ioWrite(IOWrite),
+        .Lb(Lb),
+        .Lbu(Lbu),
         .alu_data(ALUResult),
         .m_rdata(m_rdata),
         .r_rdata(ReadData2),
