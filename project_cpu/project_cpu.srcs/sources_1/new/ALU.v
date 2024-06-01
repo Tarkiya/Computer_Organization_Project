@@ -6,11 +6,7 @@ module ALU(
     input [2:0] funct3,
     input [6:0] funct7,
     input ALUSrc,
-    input blt,
-    input bge,
-    input bltu,
-    input bgeu,
-    input nBranch,
+    input Branch,nBranch,Blt,Bge,Bltu,Bgeu,
     output reg [31:0] ALUResult,
     output reg zero
     );
@@ -56,17 +52,17 @@ module ALU(
     end
     
     always @(*) begin
-        if (bltu) 
+        if (Bltu) 
             zero = ($unsigned(ReadData1) < $unsigned(ALUData));
-        else if (bgeu) 
+        else if (Bgeu) 
             zero = ($unsigned(ReadData1) >= $unsigned(ALUData));
-        else if (blt) 
+        else if (Blt) 
             zero = (ReadData1 < ALUData);
-        else if (bge) 
+        else if (Bge) 
             zero = (ReadData1 >= ALUData);
         else if (nBranch) 
             zero = (ALUResult != 32'b0);
-        else 
+        else if (Branch)
             zero = (ALUResult == 32'b0);
     end
 endmodule
