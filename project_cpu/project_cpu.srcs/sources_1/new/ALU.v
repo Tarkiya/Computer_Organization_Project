@@ -5,7 +5,7 @@ module ALU(
     input [1:0] ALUOp,
     input [2:0] Funct3,
     input [6:0] Funct7,
-    input ALUSrc,
+    input ALUSrc,Ecall,
     input Branch,nBranch,Blt,Bge,Bltu,Bgeu,
     output reg [31:0] ALUResult,
     output reg result
@@ -34,10 +34,14 @@ module ALU(
       end
       
     always @(*) begin
+        if(Ecall)
+            ALUData=32'b0;
+        else begin
         if(ALUSrc == 1'b0) 
             ALUData = ReadData2;
         else 
             ALUData = Imm32;
+        end
     end
     
     always @(*) begin

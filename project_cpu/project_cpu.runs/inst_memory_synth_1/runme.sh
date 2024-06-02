@@ -11,9 +11,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=E:/Digital_logic/Xilinx/SDK/2017.4/bin;E:/Digital_logic/Xilinx/Vivado/2017.4/ids_lite/ISE/bin/nt64;E:/Digital_logic/Xilinx/Vivado/2017.4/ids_lite/ISE/lib/nt64:E:/Digital_logic/Xilinx/Vivado/2017.4/bin
+  PATH=D:/vivado/Vivado/2017.4/ids_lite/ISE/bin/nt64;D:/vivado/Vivado/2017.4/ids_lite/ISE/lib/nt64:D:/vivado/Vivado/2017.4/bin
 else
-  PATH=E:/Digital_logic/Xilinx/SDK/2017.4/bin;E:/Digital_logic/Xilinx/Vivado/2017.4/ids_lite/ISE/bin/nt64;E:/Digital_logic/Xilinx/Vivado/2017.4/ids_lite/ISE/lib/nt64:E:/Digital_logic/Xilinx/Vivado/2017.4/bin:$PATH
+  PATH=D:/vivado/Vivado/2017.4/ids_lite/ISE/bin/nt64;D:/vivado/Vivado/2017.4/ids_lite/ISE/lib/nt64:D:/vivado/Vivado/2017.4/bin:$PATH
 fi
 export PATH
 
@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='E:/Computer_Organization_Project/project_cpu/project_cpu.runs/inst_memory_synth_1'
+HD_PWD='C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/inst_memory_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

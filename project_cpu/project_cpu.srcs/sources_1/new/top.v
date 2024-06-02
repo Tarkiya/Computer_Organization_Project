@@ -109,13 +109,14 @@ module top(
     // ALU Ä£¿é
     /////////////////////////////////////////////////////////////
     ALU uAlu(
-        .ReadData1(ReadData2),
-        .ReadData2(ReadData1),
+        .ReadData1(ReadData1),
+        .ReadData2(ReadData2),
         .Imm32(imm32),
         .ALUOp(ALUOp), 
         .Funct3(inst[14:12]), 
         .Funct7(inst[31:25]), 
         .ALUSrc(ALUSrc),
+        .Ecall(Ecall),
         .Branch(Branch),
         .nBranch(nBranch),
         .Blt(Blt),

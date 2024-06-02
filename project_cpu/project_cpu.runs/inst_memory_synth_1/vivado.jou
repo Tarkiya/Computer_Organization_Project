@@ -2,11 +2,11 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun Jun  2 02:09:07 2024
-# Process ID: 10008
-# Current directory: E:/Computer_Organization_Project/project_cpu/project_cpu.runs/inst_memory_synth_1
+# Start of session at: Sun Jun  2 18:43:26 2024
+# Process ID: 48772
+# Current directory: C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/inst_memory_synth_1
 # Command line: vivado.exe -log inst_memory.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source inst_memory.tcl
-# Log file: E:/Computer_Organization_Project/project_cpu/project_cpu.runs/inst_memory_synth_1/inst_memory.vds
-# Journal file: E:/Computer_Organization_Project/project_cpu/project_cpu.runs/inst_memory_synth_1\vivado.jou
+# Log file: C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/inst_memory_synth_1/inst_memory.vds
+# Journal file: C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/inst_memory_synth_1\vivado.jou
 #-----------------------------------------------------------
 source inst_memory.tcl -notrace

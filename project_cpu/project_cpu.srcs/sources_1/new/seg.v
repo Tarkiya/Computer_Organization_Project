@@ -63,9 +63,9 @@ reg [3:0] curdata=4'b0;
                     end
                 endcase
             end
-            //使能信号不为1，数码管上不能有显示
+            //使能信号不为1
             else begin
-                chip_sel=1'b0;
+                chip_sel<=chip_sel;
             end
         end
         

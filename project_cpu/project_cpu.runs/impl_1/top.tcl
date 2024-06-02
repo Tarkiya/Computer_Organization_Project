@@ -65,8 +65,9 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_param xicom.use_bs_reader 1
   open_checkpoint top_routed.dcp
-  set_property webtalk.parent_dir E:/Computer_Organization_Project/project_cpu/project_cpu.cache/wt [current_project]
+  set_property webtalk.parent_dir C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.cache/wt [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force top.mmi }
   write_bitstream -force top.bit 

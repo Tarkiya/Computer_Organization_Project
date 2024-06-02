@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc rfile:../../../project_cpu.srcs/constrs_1/new/constr.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc rfile:../../../project_cpu.srcs/constrs_1/new/constr.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN P17 IOSTANDARD LVCMOS33} [get_ports clkIn]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]

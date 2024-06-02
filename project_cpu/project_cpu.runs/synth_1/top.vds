@@ -2,12 +2,12 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun Jun  2 02:19:04 2024
-# Process ID: 1828
-# Current directory: E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1
+# Start of session at: Sun Jun  2 19:30:34 2024
+# Process ID: 48188
+# Current directory: C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/top.vds
-# Journal file: E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1\vivado.jou
+# Log file: C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/top.vds
+# Journal file: C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace
 Command: synth_design -top top -part xc7a35tcsg324-1
@@ -15,50 +15,49 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4976 
+INFO: Helper process launched with PID 9924 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 406.379 ; gain = 101.859
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 343.527 ; gain = 100.980
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'top' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
-INFO: [Synth 8-638] synthesizing module 'clock_cpu' [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/realtime/clock_cpu_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'clock_cpu' (1#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/realtime/clock_cpu_stub.v:5]
-INFO: [Synth 8-638] synthesizing module 'clock_div' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/clock_div.v:1]
-INFO: [Synth 8-256] done synthesizing module 'clock_div' (2#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/clock_div.v:1]
-INFO: [Synth 8-638] synthesizing module 'IFetch' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:1]
-INFO: [Synth 8-638] synthesizing module 'inst_memory' [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/realtime/inst_memory_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'inst_memory' (3#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/realtime/inst_memory_stub.v:6]
-WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (14) of module 'inst_memory' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:27]
-INFO: [Synth 8-256] done synthesizing module 'IFetch' (4#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:1]
-INFO: [Synth 8-638] synthesizing module 'Controller' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/control.v:1]
-INFO: [Synth 8-256] done synthesizing module 'Controller' (5#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/control.v:1]
-INFO: [Synth 8-638] synthesizing module 'Decoder' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/Decoder.v:1]
-INFO: [Synth 8-256] done synthesizing module 'Decoder' (6#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/Decoder.v:1]
-INFO: [Synth 8-638] synthesizing module 'ALU' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:1]
-WARNING: [Synth 8-151] case item 4'b1111 is unreachable [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:44]
-INFO: [Synth 8-256] done synthesizing module 'ALU' (7#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:1]
-INFO: [Synth 8-638] synthesizing module 'm_data' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/m_data.v:1]
-INFO: [Synth 8-638] synthesizing module 'data_memory' [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/realtime/data_memory_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'data_memory' (8#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/realtime/data_memory_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'm_data' (9#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/m_data.v:1]
-INFO: [Synth 8-638] synthesizing module 'MemOrIO' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:1]
-INFO: [Synth 8-155] case statement is not full and has no default [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:27]
-INFO: [Synth 8-155] case statement is not full and has no default [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:58]
-INFO: [Synth 8-256] done synthesizing module 'MemOrIO' (10#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:1]
-INFO: [Synth 8-638] synthesizing module 'debouncer' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/debouncer.v:1]
-INFO: [Synth 8-256] done synthesizing module 'debouncer' (11#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/debouncer.v:1]
-INFO: [Synth 8-638] synthesizing module 'switch' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/switch.v:1]
-INFO: [Synth 8-256] done synthesizing module 'switch' (12#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/switch.v:1]
-INFO: [Synth 8-638] synthesizing module 'seg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:1]
-INFO: [Synth 8-226] default block is never used [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:19]
-WARNING: [Synth 8-151] case item 4'b1010 is unreachable [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:76]
-WARNING: [Synth 8-151] case item 4'b1010 is unreachable [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:76]
-WARNING: [Synth 8-151] case item 4'b1010 is unreachable [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:96]
-WARNING: [Synth 8-151] case item 4'b1010 is unreachable [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:96]
-WARNING: [Synth 8-567] referenced signal 'curdata' should be on the sensitivity list [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:74]
-INFO: [Synth 8-256] done synthesizing module 'seg' (13#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:1]
-INFO: [Synth 8-638] synthesizing module 'led' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:1]
-INFO: [Synth 8-256] done synthesizing module 'led' (14#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:1]
-INFO: [Synth 8-256] done synthesizing module 'top' (15#1) [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+INFO: [Synth 8-638] synthesizing module 'top' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
+INFO: [Synth 8-638] synthesizing module 'clock_cpu' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/realtime/clock_cpu_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clock_cpu' (1#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/realtime/clock_cpu_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'clock_div' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/clock_div.v:1]
+INFO: [Synth 8-256] done synthesizing module 'clock_div' (2#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/clock_div.v:1]
+INFO: [Synth 8-638] synthesizing module 'IFetch' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:1]
+INFO: [Synth 8-638] synthesizing module 'inst_memory' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/realtime/inst_memory_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'inst_memory' (3#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/realtime/inst_memory_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (14) of module 'inst_memory' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:31]
+INFO: [Synth 8-256] done synthesizing module 'IFetch' (4#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:1]
+INFO: [Synth 8-638] synthesizing module 'Controller' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/control.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Controller' (5#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/control.v:1]
+INFO: [Synth 8-638] synthesizing module 'Decoder' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/Decoder.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Decoder' (6#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/Decoder.v:1]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:1]
+WARNING: [Synth 8-151] case item 4'b1111 is unreachable [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:48]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (7#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:1]
+INFO: [Synth 8-638] synthesizing module 'm_data' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/m_data.v:1]
+INFO: [Synth 8-638] synthesizing module 'data_memory' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/realtime/data_memory_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'data_memory' (8#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/realtime/data_memory_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'm_data' (9#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/m_data.v:1]
+INFO: [Synth 8-638] synthesizing module 'MemOrIO' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:56]
+INFO: [Synth 8-256] done synthesizing module 'MemOrIO' (10#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:1]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/debouncer.v:1]
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (11#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/debouncer.v:1]
+INFO: [Synth 8-638] synthesizing module 'switch' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/switch.v:1]
+INFO: [Synth 8-256] done synthesizing module 'switch' (12#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/switch.v:1]
+INFO: [Synth 8-638] synthesizing module 'seg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:19]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:76]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:76]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:96]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:96]
+WARNING: [Synth 8-567] referenced signal 'curdata' should be on the sensitivity list [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:74]
+INFO: [Synth 8-256] done synthesizing module 'seg' (13#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:1]
+INFO: [Synth 8-638] synthesizing module 'led' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:1]
+INFO: [Synth 8-256] done synthesizing module 'led' (14#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:1]
+INFO: [Synth 8-256] done synthesizing module 'top' (15#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
 WARNING: [Synth 8-3331] design m_data has unconnected port rst
 WARNING: [Synth 8-3331] design m_data has unconnected port addr[31]
 WARNING: [Synth 8-3331] design m_data has unconnected port addr[30]
@@ -84,12 +83,13 @@ WARNING: [Synth 8-3331] design ALU has unconnected port Funct7[3]
 WARNING: [Synth 8-3331] design ALU has unconnected port Funct7[2]
 WARNING: [Synth 8-3331] design ALU has unconnected port Funct7[1]
 WARNING: [Synth 8-3331] design ALU has unconnected port Funct7[0]
+WARNING: [Synth 8-3331] design Decoder has unconnected port ecall
 WARNING: [Synth 8-3331] design Controller has unconnected port button[4]
 WARNING: [Synth 8-3331] design Controller has unconnected port button[3]
 WARNING: [Synth 8-3331] design Controller has unconnected port button[2]
 WARNING: [Synth 8-3331] design Controller has unconnected port button[1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 458.648 ; gain = 154.129
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 396.195 ; gain = 153.648
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -99,59 +99,62 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 458.648 ; gain = 154.129
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 396.195 ; gain = 153.648
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/dcp3/clock_cpu_in_context.xdc] for cell 'ucpuclk'
-Finished Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/dcp3/clock_cpu_in_context.xdc] for cell 'ucpuclk'
-Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/dcp4/inst_memory_in_context.xdc] for cell 'uIFetch/uinst'
-Finished Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/dcp4/inst_memory_in_context.xdc] for cell 'uIFetch/uinst'
-Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/dcp5/data_memory_in_context.xdc] for cell 'udata/udata'
-Finished Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/dcp5/data_memory_in_context.xdc] for cell 'udata/udata'
-Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc]
-Finished Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp3/clk_wiz_0_in_context.xdc] for cell 'ucpuclk'
+Finished Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp3/clk_wiz_0_in_context.xdc] for cell 'ucpuclk'
+Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp4/inst_memory_in_context.xdc] for cell 'uIFetch/uinst'
+Finished Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp4/inst_memory_in_context.xdc] for cell 'uIFetch/uinst'
+Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp5/data_memory_in_context.xdc] for cell 'udata/udata'
+Finished Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp5/data_memory_in_context.xdc] for cell 'udata/udata'
+Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc]
+Finished Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 801.426 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 740.055 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 801.426 ; gain = 496.906
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 740.055 ; gain = 497.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 801.426 ; gain = 496.906
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 740.055 ; gain = 497.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clkIn. (constraint file  E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/dcp3/clock_cpu_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clkIn. (constraint file  E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-1828-LAPTOP-END1HUJS/dcp3/clock_cpu_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clkIn. (constraint file  C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp3/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clkIn. (constraint file  C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp3/clk_wiz_0_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for uIFetch/uinst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for ucpuclk. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for udata/udata. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 801.426 ; gain = 496.906
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 740.055 ; gain = 497.508
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "clk_2ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "cnt_2ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element pc_reg was removed.  [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:14]
+WARNING: [Synth 8-6014] Unused sequential element pc_reg was removed.  [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:15]
 INFO: [Synth 8-5546] ROM "ALUOp" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "ALUSrc" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "RegWrite" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "ALUSrc" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5544] ROM "RegWrite" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "rs1" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "rs2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "register_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "rd" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "register_reg[1]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "register_reg[2]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "register_reg[3]" won't be mapped to RAM because it is too sparse
@@ -183,20 +186,21 @@ INFO: [Synth 8-5546] ROM "register_reg[28]" won't be mapped to RAM because it is
 INFO: [Synth 8-5546] ROM "register_reg[29]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "register_reg[30]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "register_reg[31]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:44]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:48]
 INFO: [Synth 8-5544] ROM "ALUControl" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ALUControl" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "r_wdata" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "io_wdata" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'count_reg' in module 'seg'
 INFO: [Synth 8-5544] ROM "chip_sel" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "count" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-WARNING: [Synth 8-327] inferring latch for variable 'imm32_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/Decoder.v:28]
-WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:58]
-WARNING: [Synth 8-327] inferring latch for variable 'm_wdata_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:65]
-WARNING: [Synth 8-327] inferring latch for variable 'r_wdata_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:28]
-WARNING: [Synth 8-327] inferring latch for variable 'io_wdata_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:59]
-WARNING: [Synth 8-327] inferring latch for variable 'io_rdata_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/switch.v:9]
+WARNING: [Synth 8-327] inferring latch for variable 'RegWrite_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/control.v:62]
+WARNING: [Synth 8-327] inferring latch for variable 'flag_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/control.v:39]
+WARNING: [Synth 8-327] inferring latch for variable 'imm32_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/Decoder.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:62]
+WARNING: [Synth 8-327] inferring latch for variable 'm_wdata_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:63]
+WARNING: [Synth 8-327] inferring latch for variable 'r_wdata_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'io_wdata_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:57]
+WARNING: [Synth 8-327] inferring latch for variable 'io_rdata_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/switch.v:9]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -210,10 +214,12 @@ WARNING: [Synth 8-327] inferring latch for variable 'io_rdata_reg' [E:/Computer_
                  iSTATE6 |                              111 |                              111
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'count_reg' using encoding 'sequential' in module 'seg'
-WARNING: [Synth 8-327] inferring latch for variable 'seg_ctrl_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:97]
-WARNING: [Synth 8-327] inferring latch for variable 'seg_ctrr_reg' [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:77]
+WARNING: [Synth 8-327] inferring latch for variable 'seg_ctrl_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:97]
+WARNING: [Synth 8-327] inferring latch for variable 'seg_ctrr_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v:77]
+WARNING: [Synth 8-327] inferring latch for variable 'ledLeft_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:10]
+WARNING: [Synth 8-327] inferring latch for variable 'ledRight_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:11]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 801.426 ; gain = 496.906
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 740.055 ; gain = 497.508
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -229,7 +235,7 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit       Adders := 1     
 	   3 Input     32 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 36    
+	               32 Bit    Registers := 35    
 	                8 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 11    
@@ -238,16 +244,15 @@ Detailed RTL Component Info :
 	   7 Input     32 Bit        Muxes := 2     
 	   8 Input      8 Bit        Muxes := 1     
 	  15 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 4     
 	   2 Input      5 Bit        Muxes := 3     
 	  11 Input      4 Bit        Muxes := 1     
 	   8 Input      4 Bit        Muxes := 1     
 	   8 Input      3 Bit        Muxes := 1     
-	   8 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 38    
-	   8 Input      1 Bit        Muxes := 2     
-	   6 Input      1 Bit        Muxes := 1     
+	   9 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 40    
+	   9 Input      1 Bit        Muxes := 3     
 	   3 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 1     
 	  14 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -269,18 +274,20 @@ Detailed RTL Component Info :
 Module IFetch 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
 Module Controller 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   8 Input      2 Bit        Muxes := 1     
-	   8 Input      1 Bit        Muxes := 2     
+	   9 Input      2 Bit        Muxes := 1     
+	   9 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 Module Decoder 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 34    
+	               32 Bit    Registers := 32    
 +---Muxes : 
 	   7 Input     32 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 3     
@@ -298,8 +305,8 @@ Module MemOrIO
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 6     
-	   2 Input      1 Bit        Muxes := 3     
-	   3 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+	   3 Input      1 Bit        Muxes := 1     
 Module debouncer 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -316,10 +323,6 @@ Detailed RTL Component Info :
 	   8 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
 	  14 Input      1 Bit        Muxes := 2     
-Module led 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      8 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -335,28 +338,29 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "rd" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "usegclk/cnt_2ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "usegclk/clk_2ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "uContrl/ALUOp" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "uContrl/ALUSrc" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "uContrl/RegWrite" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element uIFetch/pc_reg was removed.  [E:/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:14]
-INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[27]' (LD) to 'uswitch/io_rdata_reg[31]'
+INFO: [Synth 8-5587] ROM size for "uContrl/ALUSrc" is below threshold of ROM address width. It will be mapped to LUTs
+WARNING: [Synth 8-6014] Unused sequential element uIFetch/pc_reg was removed.  [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:15]
+WARNING: [Synth 8-3331] design Decoder has unconnected port ecall
 INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[31]' (LD) to 'uswitch/io_rdata_reg[30]'
 INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[23]' (LD) to 'uswitch/io_rdata_reg[30]'
-INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[25]' (LD) to 'uswitch/io_rdata_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[27]' (LD) to 'uswitch/io_rdata_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[19]' (LD) to 'uswitch/io_rdata_reg[30]'
 INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[29]' (LD) to 'uswitch/io_rdata_reg[30]'
 INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[21]' (LD) to 'uswitch/io_rdata_reg[30]'
-INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[26]' (LD) to 'uswitch/io_rdata_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[25]' (LD) to 'uswitch/io_rdata_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[17]' (LD) to 'uswitch/io_rdata_reg[30]'
 INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[30]' (LD) to 'uswitch/io_rdata_reg[28]'
 INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[22]' (LD) to 'uswitch/io_rdata_reg[28]'
-INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[24]' (LD) to 'uswitch/io_rdata_reg[28]'
-INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[28]' (LD) to 'uswitch/io_rdata_reg[20]'
-INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[16]' (LD) to 'uswitch/io_rdata_reg[20]'
-INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[17]' (LD) to 'uswitch/io_rdata_reg[20]'
-INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[18]' (LD) to 'uswitch/io_rdata_reg[20]'
-INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[19]' (LD) to 'uswitch/io_rdata_reg[20]'
-INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[15]' (LD) to 'uswitch/io_rdata_reg[20]'
+INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[26]' (LD) to 'uswitch/io_rdata_reg[28]'
+INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[18]' (LD) to 'uswitch/io_rdata_reg[28]'
+INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[28]' (LD) to 'uswitch/io_rdata_reg[24]'
+INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[20]' (LD) to 'uswitch/io_rdata_reg[24]'
+INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[24]' (LD) to 'uswitch/io_rdata_reg[16]'
+INFO: [Synth 8-3886] merging instance 'uswitch/io_rdata_reg[15]' (LD) to 'uswitch/io_rdata_reg[16]'
 INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_99' (LD) to 'io_wdata_reg__0i_103'
 INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_103' (LD) to 'io_wdata_reg__0i_107'
 INFO: [Synth 8-3886] merging instance 'io_wdata_reg__0i_107' (LD) to 'io_wdata_reg__0i_111'
@@ -487,38 +491,70 @@ WARNING: [Synth 8-3332] Sequential element (debouncer3/q1_reg) is unused and wil
 WARNING: [Synth 8-3332] Sequential element (debouncer3/q2_reg) is unused and will be removed from module top.
 WARNING: [Synth 8-3332] Sequential element (debouncer4/q1_reg) is unused and will be removed from module top.
 WARNING: [Synth 8-3332] Sequential element (debouncer4/q2_reg) is unused and will be removed from module top.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][11] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 740.055 ; gain = 497.508
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'ucpuclk/clk_out1' to pin 'ucpuclk/bbstub_clk_out1/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 757.031 ; gain = 514.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 912.426 ; gain = 669.879
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][19] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][17] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][18] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][12] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][17] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][25] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][27] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][23] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][26] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][24] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][29] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][28] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uDecoder/register_reg[0][15] )
 WARNING: [Synth 8-3332] Sequential element (uDecoder/register_reg[0][31]) is unused and will be removed from module top.
 WARNING: [Synth 8-3332] Sequential element (uDecoder/register_reg[0][30]) is unused and will be removed from module top.
 WARNING: [Synth 8-3332] Sequential element (uDecoder/register_reg[0][29]) is unused and will be removed from module top.
@@ -533,39 +569,7 @@ WARNING: [Synth 8-3332] Sequential element (uDecoder/register_reg[0][21]) is unu
 WARNING: [Synth 8-3332] Sequential element (uDecoder/register_reg[0][20]) is unused and will be removed from module top.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:42 . Memory (MB): peak = 801.426 ; gain = 496.906
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Applying XDC Timing Constraints
----------------------------------------------------------------------------------
-INFO: [Synth 8-5578] Moved timing constraint from pin 'ucpuclk/clk_out1' to pin 'ucpuclk/bbstub_clk_out1/O'
-INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
----------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:50 . Memory (MB): peak = 830.180 ; gain = 525.660
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Timing Optimization
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:51 . Memory (MB): peak = 854.445 ; gain = 549.926
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Technology Mapping
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:52 . Memory (MB): peak = 895.555 ; gain = 591.035
+Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 912.426 ; gain = 669.879
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -589,7 +593,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:53 . Memory (MB): peak = 895.555 ; gain = 591.035
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -602,7 +606,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:53 . Memory (MB): peak = 895.555 ; gain = 591.035
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -614,25 +618,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:53 . Memory (MB): peak = 895.555 ; gain = 591.035
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:53 . Memory (MB): peak = 895.555 ; gain = 591.035
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:53 . Memory (MB): peak = 895.555 ; gain = 591.035
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:54 . Memory (MB): peak = 895.555 ; gain = 591.035
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -654,57 +658,62 @@ Report Cell Usage:
 |1     |clock_cpu   |     1|
 |2     |data_memory |     1|
 |3     |inst_memory |     1|
-|4     |BUFG        |     3|
+|4     |BUFG        |     2|
 |5     |CARRY4      |    28|
-|6     |LUT1        |     7|
-|7     |LUT2        |    59|
-|8     |LUT3        |    49|
-|9     |LUT4        |    71|
-|10    |LUT5        |   240|
-|11    |LUT6        |   988|
-|12    |MUXF7       |   164|
-|13    |FDRE        |  1122|
-|14    |LD          |   119|
-|15    |IBUF        |    18|
-|16    |OBUF        |    40|
+|6     |LUT1        |     6|
+|7     |LUT2        |    78|
+|8     |LUT3        |    98|
+|9     |LUT4        |   144|
+|10    |LUT5        |   155|
+|11    |LUT6        |   875|
+|12    |MUXF7       |   304|
+|13    |MUXF8       |    46|
+|14    |FDRE        |  1090|
+|15    |LD          |    89|
+|16    |LDC         |    16|
+|17    |IBUF        |    18|
+|18    |OBUF        |    40|
 +------+------------+------+
 
 Report Instance Areas: 
-+------+-------------+----------+------+
-|      |Instance     |Module    |Cells |
-+------+-------------+----------+------+
-|1     |top          |          |  2973|
-|2     |  debouncer0 |debouncer |     3|
-|3     |  uAlu       |ALU       |    17|
-|4     |  uDecoder   |Decoder   |  2202|
-|5     |  uIFetch    |IFetch    |   397|
-|6     |  uMemOrIO   |MemOrIO   |   124|
-|7     |  udata      |m_data    |    32|
-|8     |  useg       |seg       |    66|
-|9     |  usegclk    |clock_div |    52|
-|10    |  uswitch    |switch    |    16|
-+------+-------------+----------+------+
++------+-------------+-----------+------+
+|      |Instance     |Module     |Cells |
++------+-------------+-----------+------+
+|1     |top          |           |  3054|
+|2     |  debouncer0 |debouncer  |     3|
+|3     |  uAlu       |ALU        |    17|
+|4     |  uContrl    |Controller |     2|
+|5     |  uDecoder   |Decoder    |  2297|
+|6     |  uIFetch    |IFetch     |   414|
+|7     |  uMemOrIO   |MemOrIO    |    76|
+|8     |  udata      |m_data     |    32|
+|9     |  uled       |led        |    16|
+|10    |  useg       |seg        |    66|
+|11    |  usegclk    |clock_div  |    52|
+|12    |  uswitch    |switch     |    16|
++------+-------------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:54 . Memory (MB): peak = 895.555 ; gain = 591.035
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 130 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:48 . Memory (MB): peak = 895.555 ; gain = 248.258
-Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:54 . Memory (MB): peak = 895.555 ; gain = 591.035
+Synthesis finished with 0 errors, 0 critical warnings and 167 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 912.426 ; gain = 326.020
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 329 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 501 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 119 instances were transformed.
-  LD => LDCE: 119 instances
+  A total of 105 instances were transformed.
+  LD => LDCE: 89 instances
+  LDC => LDCE: 16 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-190 Infos, 146 Warnings, 0 Critical Warnings and 0 Errors encountered.
+191 Infos, 152 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:57 . Memory (MB): peak = 895.555 ; gain = 602.559
-INFO: [Common 17-1381] The checkpoint 'E:/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/top.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:50 . Memory (MB): peak = 912.426 ; gain = 681.414
+INFO: [Common 17-1381] The checkpoint 'C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 895.555 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Jun  2 02:20:08 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 912.426 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Jun  2 19:31:27 2024...

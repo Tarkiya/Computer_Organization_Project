@@ -24,9 +24,7 @@ module MemOrIO(
     // 从 memory 或 IO 读入数据，写入寄存器
     always @(*) begin
         if(ecall == 1'b1) begin
-            case(alu_data[3:0])
-                4'b0101: r_wdata = io_rdata;
-            endcase
+            r_wdata = io_rdata;
         end
         else if(memIOtoReg == 1'b0) begin
             r_wdata = alu_data;

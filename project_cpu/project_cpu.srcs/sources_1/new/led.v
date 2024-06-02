@@ -15,8 +15,8 @@ module led(
             ledRight = in[7:0];
         end
         else begin
-            ledLeft = 7'b0000000;
-            ledRight = 7'b000000;
+            ledLeft = ledLeft;
+            ledRight = ledRight;
         end
     end
 endmodule
