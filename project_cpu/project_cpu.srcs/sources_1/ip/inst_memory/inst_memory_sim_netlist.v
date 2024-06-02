@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
 // Date        : Sun Jun  2 19:58:58 2024
 // Host        : jim running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/inst_memory/inst_memory_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top inst_memory -prefix
+//               inst_memory_ inst_memory_sim_netlist.v
 // Design      : inst_memory
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -186,7 +186,6 @@ module inst_memory
         .web(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "bindec" *) 
 module inst_memory_bindec
    (ena_array,
     addra);
@@ -210,7 +209,6 @@ module inst_memory_bindec
         .O(ena_array[1]));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module inst_memory_blk_mem_gen_generic_cstr
    (douta,
     addra,
@@ -451,7 +449,6 @@ module inst_memory_blk_mem_gen_generic_cstr
         .\douta[22] (\ramloop[9].ram.r_n_8 ));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_mux" *) 
 module inst_memory_blk_mem_gen_mux
    (douta,
     addra,
@@ -825,7 +822,6 @@ module inst_memory_blk_mem_gen_mux
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module inst_memory_blk_mem_gen_prim_width
    (douta,
     clka,
@@ -1206,7 +1202,6 @@ module inst_memory_blk_mem_gen_prim_width__parameterized9
         .ena_array(ena_array));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
 module inst_memory_blk_mem_gen_prim_wrapper_init
    (douta,
     clka,
@@ -4723,7 +4718,6 @@ module inst_memory_blk_mem_gen_prim_wrapper_init__parameterized9
         .WEBWE({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module inst_memory_blk_mem_gen_top
    (douta,
     addra,
@@ -4766,7 +4760,7 @@ endmodule
 (* C_USE_URAM = "0" *) (* C_WEA_WIDTH = "1" *) (* C_WEB_WIDTH = "1" *) 
 (* C_WRITE_DEPTH_A = "16384" *) (* C_WRITE_DEPTH_B = "16384" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) 
 (* C_WRITE_MODE_B = "WRITE_FIRST" *) (* C_WRITE_WIDTH_A = "32" *) (* C_WRITE_WIDTH_B = "32" *) 
-(* C_XDEVICEFAMILY = "artix7" *) (* ORIG_REF_NAME = "blk_mem_gen_v8_4_1" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* C_XDEVICEFAMILY = "artix7" *) (* downgradeipidentifiedwarnings = "yes" *) 
 module inst_memory_blk_mem_gen_v8_4_1
    (clka,
     rsta,
@@ -5024,7 +5018,6 @@ module inst_memory_blk_mem_gen_v8_4_1
         .douta(douta));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_1_synth" *) 
 module inst_memory_blk_mem_gen_v8_4_1_synth
    (douta,
     addra,

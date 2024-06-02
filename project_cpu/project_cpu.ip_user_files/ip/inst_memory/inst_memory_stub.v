@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
 // Date        : Sun Jun  2 19:58:58 2024
 // Host        : jim running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/inst_memory/inst_memory_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top inst_memory -prefix
+//               inst_memory_ inst_memory_stub.v
 // Design      : inst_memory
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35tcsg324-1

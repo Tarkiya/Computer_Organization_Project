@@ -134,6 +134,7 @@ module top(
         .clk(cpuClk),
         .rst(rst),
         .MemWrite(MemWrite),
+        .inst(inst),
         .addr(ALUResult),
         .din(ReadData2),
         .dout(m_rdata)

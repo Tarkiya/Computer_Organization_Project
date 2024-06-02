@@ -56,7 +56,7 @@ module Decoder(
     
     assign rs1Data = register[rs1];
     assign rs2Data = register[rs2];
-    
+    reg regWriteonce=1'b0;
     always @(posedge clk) begin
         if(~rst) begin
             for(i=0;i<32;i=i+1)begin
@@ -67,7 +67,19 @@ module Decoder(
           begin
 //            rs1Data <= register[rs1];
 //            rs2Data <= register[rs2];
-            if(regWrite && rd!=0) register[rd] <= writeData;
+            if(regWrite && rd!=0) begin 
+                if(inst==32'h73) begin
+                    if(regWriteonce==1'b0) begin
+                        register[rd] <= writeData;
+                        regWriteonce<=1'b1;
+                    end 
+                end
+                else begin
+                    register[rd] <= writeData;
+                    regWriteonce<=1'b0;
+                end
+                
+            end
           end
       end
 endmodule
