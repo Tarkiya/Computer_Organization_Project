@@ -22,10 +22,9 @@ module tb_top;
     button = 5'b00000;
     switch = 16'hff0f;
     #3000000 rst = 1;
-    #220000 button = 5'b00001;
-    #50000 button = 5'b00000;
+    #500000 button = 5'b00001;
+    #500000 button = 5'b00000;
     #100000 switch = 16'habcd;
-    
     #1000000000 $finish;
   end
 

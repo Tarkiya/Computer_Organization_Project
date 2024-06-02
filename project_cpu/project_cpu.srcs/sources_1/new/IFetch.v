@@ -4,10 +4,10 @@ module IFetch(
     input [31:0] imm32,
     input result,
     input Branch,nBranch,Blt,Bge,Bltu,Bgeu,
-    output reg [31:0] inst
+    output [31:0] inst
     );
     wire Bran;
-    wire [31:0] insto;
+    //wire [31:0] insto;
     reg [31:0] pc;
     assign Bran = Branch || nBranch || Blt || Bge || Bltu || Bgeu;
     always @(negedge clk) begin
@@ -21,12 +21,12 @@ module IFetch(
             end
         end
     end
-    always @(posedge clk) begin
-        inst = insto;
-    end
+//    always @(posedge clk) begin
+//        inst = insto;
+//    end
     inst_memory uinst(
         .clka(clk),
         .addra(pc>>2),
-        .douta(insto)
+        .douta(inst)
     );
 endmodule

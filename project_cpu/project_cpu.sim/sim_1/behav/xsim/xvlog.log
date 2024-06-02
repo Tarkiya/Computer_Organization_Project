@@ -26,8 +26,6 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/yjc/OneDrive/Desktop/cspro
 INFO: [VRFC 10-311] analyzing module m_data
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/seg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module seg
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/switch.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module switch
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sim_1/new/tb_top.v" into library xil_defaultlib

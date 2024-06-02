@@ -10,7 +10,10 @@ module MemOrIO(
     input [31:0] alu_data,
     input [31:0] m_rdata,
     input [31:0] r_rdata,
-    input [31:0] io_rdata,
+    input [31:0] io_rdataswitchesleft,
+    input [31:0] io_rdataswitchesright,
+    input [31:0] io_rdatabuttons,
+    input [7:0] address,
     
     output reg [31:0] m_wdata,
     output reg [31:0] r_wdata,
@@ -31,13 +34,37 @@ module MemOrIO(
             end  
             else if(ioRead == 1'b1) begin
                 if(Lb == 1'b1) begin
-                    r_wdata = {{24{io_rdata[15]}}, io_rdata[15:8]};
+                    if(address[5:2]==4'b0) begin
+                        r_wdata = {{24{io_rdataswitchesleft[7]}},io_rdataswitchesleft[7:0]};
+                    end
+                    else if(address[5:2]==4'b1) begin
+                        r_wdata = {{24{io_rdataswitchesright[7]}},io_rdataswitchesright[7:0]};
+                    end
+                    else if(address[5:2]==4'b10) begin
+                        r_wdata = {{27{io_rdatabuttons[4]}},io_rdatabuttons[4:0]};
+                    end
                 end
                 else if (Lbu == 1'b1) begin
-                    r_wdata = {{24{1'b0}}, io_rdata[15:8]};
+                    if(address[5:2]==4'b0) begin
+                            r_wdata = {{24{1'b0}},io_rdataswitchesleft[7:0]};
+                    end
+                    else if(address[5:2]==4'b1) begin
+                        r_wdata = {{24{1'b0}},io_rdataswitchesright[7:0]};
+                    end
+                    else if(address[5:2]==4'b10) begin
+                        r_wdata = {{27{1'b0}},io_rdatabuttons[4:0]};
+                    end
                 end
-                else begin
-                    r_wdata = io_rdata;
+                else begin//load word
+                    if(address[5:2]==4'b0) begin
+                        r_wdata = {{24{io_rdataswitchesleft[7]}},io_rdataswitchesleft[7:0]};
+                    end
+                    else if(address[5:2]==4'b1) begin
+                        r_wdata = {{24{io_rdataswitchesright[7]}},io_rdataswitchesright[7:0]};
+                    end
+                    else if(address[5:2]==4'b10) begin
+                        r_wdata = io_rdatabuttons;
+                    end
                 end
             end  
         end

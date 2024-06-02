@@ -150,10 +150,13 @@ module top(
         .alu_data(ALUResult),
         .m_rdata(m_rdata),
         .r_rdata(ReadData2),
-        .io_rdata(io_rdata),
         .m_wdata(m_wdata),
         .r_wdata(r_wdata),
         .io_wdata(io_wdata),
+        .io_rdataswitchesleft({{24{switchLeft[7]}},switchLeft}),
+        .io_rdataswitchesright({{24{switchRight[7]}},switchRight}),
+        .io_rdatabuttons({{27{button[4]}},button}),
+        .address(ALUResult[7:0]),
         .LEDCtrl(LEDCtrl),
         .SwitchCtrl(SwitchCtrl)
     );
@@ -184,15 +187,6 @@ module top(
         .slowclk(cpuClk),
         .button(button[4]),
         .signal(debutton[4])
-    );
-    
-    // switch输入
-    /////////////////////////////////////////////////////////////
-    switch uswitch(
-        .en(SwitchCtrl),
-        .switchLeft(switchLeft),
-        .switchRight(switchRight),
-        .io_rdata(io_rdata)
     );
     
     // 数码管显示

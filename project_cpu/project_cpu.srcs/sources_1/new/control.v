@@ -25,8 +25,8 @@ module Controller (
     assign Sw = (inst[6:0] == 7'b0100011);
     assign Lb= inst[6:0] == 7'b0000011 && inst[14:12] ==3'b0;
     assign Lbu= inst[6:0] == 7'b0000011 && inst[14:12] ==3'b100;
-    assign MemRead  = (inst[6:0] == 7'b0000011);
-    assign MemWrite = ((Sw == 1) && (Alu_resultHigh[21:0] != 22'h3FFFFF)) ? 1'b1:1'b0;
+    assign MemRead  = (inst[6:0] == 7'b0000011 && Alu_resultHigh[21:0] != 22'h3FFFFF);
+    assign MemWrite = (Sw == 1) && (Alu_resultHigh[21:0] != 22'h3FFFFF);
     assign MemorIOtoReg = (IORead || MemRead);
     assign IORead = (Lw && Alu_resultHigh[21:0] == 22'h3FFFFF);
     assign IOWrite = (Sw && Alu_resultHigh[21:0] == 22'h3FFFFF);
