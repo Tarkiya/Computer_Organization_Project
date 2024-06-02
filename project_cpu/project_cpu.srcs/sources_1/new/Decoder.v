@@ -1,6 +1,5 @@
 module Decoder(
     input clk,rst,
-    input ecall,
     input regWrite,
     input [31:0] inst,
     input [31:0] writeData,
@@ -19,9 +18,9 @@ module Decoder(
     wire [4:0] rd;
     
     assign opcode = inst[6:0];
-    assign rs1 = (inst[31:0] == 32'h00000073) ? 5'b10001 : inst[19:15];
-    assign rs2 = (inst[31:0] == 32'h00000073) ? 5'b01010 : inst[24:20];
-    assign rd = (inst[31:0] == 32'h00000073) ? 5'b01010 : inst[11:7];
+    assign rs1 =  inst[19:15];
+    assign rs2 = inst[24:20];
+    assign rd = inst[11:7];
 //    always @(*) begin
 //        if(inst[31:0] == 32'h00000073) begin
 //            rs1 = 5'b10001;
@@ -56,7 +55,6 @@ module Decoder(
     
     assign rs1Data = register[rs1];
     assign rs2Data = register[rs2];
-    reg regWriteonce=1'b0;
     always @(posedge clk) begin
         if(~rst) begin
             for(i=0;i<32;i=i+1)begin
@@ -68,17 +66,7 @@ module Decoder(
 //            rs1Data <= register[rs1];
 //            rs2Data <= register[rs2];
             if(regWrite && rd!=0) begin 
-                if(inst==32'h73) begin
-                    if(regWriteonce==1'b0) begin
-                        register[rd] <= writeData;
-                        regWriteonce<=1'b1;
-                    end 
-                end
-                else begin
                     register[rd] <= writeData;
-                    regWriteonce<=1'b0;
-                end
-                
             end
           end
       end

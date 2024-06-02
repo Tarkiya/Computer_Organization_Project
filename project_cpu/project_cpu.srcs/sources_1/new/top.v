@@ -33,7 +33,6 @@ module top(
     wire [31:0] inst;
     wire [31:0] pc;
     wire result;
-    wire Ecall;
     wire Branch,nBranch,Blt,Bge,Bltu,Bgeu;
     wire Lb,Lbu;
     IFetch uIFetch(
@@ -41,7 +40,6 @@ module top(
         .rst(rst),
         .imm32(imm32),
         .result(result),
-        .Ecall(Ecall),
         .Branch(Branch),
         .nBranch(nBranch),
         .Blt(Blt),
@@ -70,7 +68,6 @@ module top(
         .ALUOp(ALUOp),
         .ALUSrc(ALUSrc),
         .RegWrite(RegWrite),
-        .Ecall(Ecall),
         .MemRead(MemRead),
         .MemWrite(MemWrite),
         .Branch(Branch),
@@ -98,7 +95,6 @@ module top(
     Decoder uDecoder(
         .clk(cpuClk),
         .rst(rst),
-        .ecall(Ecall),
         .regWrite(RegWrite),
         .inst(inst),
         .writeData(r_wdata),
@@ -117,7 +113,6 @@ module top(
         .Funct3(inst[14:12]), 
         .Funct7(inst[31:25]), 
         .ALUSrc(ALUSrc),
-        .Ecall(Ecall),
         .Branch(Branch),
         .nBranch(nBranch),
         .Blt(Blt),
@@ -145,7 +140,6 @@ module top(
     wire LEDCtrl;
     wire SwitchCtrl;
     MemOrIO uMemOrIO(
-        .ecall(Ecall),
         .mRead(MemRead),
         .mWrite(MemWrite),
         .ioRead(IORead),

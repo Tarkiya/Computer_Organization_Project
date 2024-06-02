@@ -6,7 +6,6 @@ module Controller (
     output reg [1:0]ALUOp,
     output reg ALUSrc,
     output reg RegWrite,
-    output reg Ecall,
     output MemRead,
     output MemWrite,
     output Branch,nBranch,Blt,Bge,Bltu,Bgeu,Lb,Lbu,
@@ -29,29 +28,8 @@ module Controller (
     assign MemRead  = (inst[6:0] == 7'b0000011);
     assign MemWrite = ((Sw == 1) && (Alu_resultHigh[21:0] != 22'h3FFFFF)) ? 1'b1:1'b0;
     assign MemorIOtoReg = (IORead || MemRead);
-    assign IORead = ((Lw && Alu_resultHigh[21:0] == 22'h3FFFFF)||(inst[31:0] == 32'h00000073 && (Alu_resultLow[3:0] == 4'b0101 || Alu_resultLow[3:0] == 4'b0110)));
-    assign IOWrite = (Sw && Alu_resultHigh[21:0] == 22'h3FFFFF||(inst[31:0] == 32'h00000073 && (Alu_resultLow[3:0] == 4'b0001)));
-
-    reg flag = 1'b0;
-    
-    always @(*) begin
-        if(button[0]==1'b0 && inst[31:0] == 32'h00000073) begin
-            if(flag == 1'b0) begin
-                Ecall = 1'b1;
-                flag = 1'b1;
-            end
-            else begin
-                Ecall = 1'b0;
-            end
-        end
-        else if(inst[31:0] != 32'h00000073) begin
-            Ecall = 1'b0;
-            flag = 1'b0;
-        end
-        else begin
-            Ecall = 1'b0;
-        end
-    end
+    assign IORead = (Lw && Alu_resultHigh[21:0] == 22'h3FFFFF);
+    assign IOWrite = (Sw && Alu_resultHigh[21:0] == 22'h3FFFFF);
 
     always @(*) begin
         case(inst[6:0])

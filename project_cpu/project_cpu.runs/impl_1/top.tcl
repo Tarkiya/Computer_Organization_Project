@@ -61,12 +61,56 @@ proc step_failed { step } {
 }
 
 
+start_step init_design
+set ACTIVE_STEP init_design
+set rc [catch {
+  create_msg_db init_design.pb
+  set_param xicom.use_bs_reader 1
+  create_project -in_memory -part xc7a35tcsg324-1
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
+  set_property webtalk.parent_dir C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.cache/wt [current_project]
+  set_property parent.project_path C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.xpr [current_project]
+  set_property ip_output_repo C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.cache/ip [current_project]
+  set_property ip_cache_permissions {read write} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  add_files -quiet C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/top.dcp
+  read_ip -quiet C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/clock_cpu/clock_cpu.xci
+  read_ip -quiet C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/inst_memory/inst_memory.xci
+  read_ip -quiet C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/data_memory/data_memory.xci
+  read_xdc C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc
+  link_design -top top -part xc7a35tcsg324-1
+  close_msg_db -file init_design.pb
+} RESULT]
+if {$rc} {
+  step_failed init_design
+  return -code error $RESULT
+} else {
+  end_step init_design
+  unset ACTIVE_STEP 
+}
+
+start_step opt_design
+set ACTIVE_STEP opt_design
+set rc [catch {
+  create_msg_db opt_design.pb
+  opt_design 
+  write_checkpoint -force top_opt.dcp
+  create_report "impl_1_opt_report_drc_0" "report_drc -file top_drc_opted.rpt -pb top_drc_opted.pb -rpx top_drc_opted.rpx"
+  close_msg_db -file opt_design.pb
+} RESULT]
+if {$rc} {
+  step_failed opt_design
+  return -code error $RESULT
+} else {
+  end_step opt_design
+  unset ACTIVE_STEP 
+}
+
 start_step place_design
 set ACTIVE_STEP place_design
 set rc [catch {
   create_msg_db place_design.pb
-  open_checkpoint top_opt.dcp
-  set_property webtalk.parent_dir C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.cache/wt [current_project]
   implement_debug_core 
   place_design 
   write_checkpoint -force top_placed.dcp
@@ -104,25 +148,6 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
-  unset ACTIVE_STEP 
-}
-
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  catch { write_mem_info -force top.mmi }
-  write_bitstream -force top.bit 
-  catch {write_debug_probes -quiet -force top}
-  catch {file copy -force top.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

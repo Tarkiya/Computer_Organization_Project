@@ -7,18 +7,9 @@ module m_data(
     input [31:0] din,
     output [31:0] dout
 );
-    reg MemWriteonce=1'b1;
-    always @(posedge clk) begin
-        if(inst==32'h73) begin
-            if(MemWriteonce) MemWriteonce<=1'b0;
-        end
-        else begin
-            MemWriteonce<=1'b1;
-        end
-    end
     data_memory udata(
         .clka(~clk),
-        .wea(MemWrite&&MemWriteonce),
+        .wea(MemWrite),
         .addra(addr[15:2]),
         .dina(din),
         .douta(dout)
