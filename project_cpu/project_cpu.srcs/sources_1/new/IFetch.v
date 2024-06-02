@@ -9,7 +9,6 @@ module IFetch(
     wire Bran;
     wire [31:0] insto;
     reg [31:0] pc;
-    reg [3:0] index=4'b0;
     assign Bran = Branch || nBranch || Blt || Bge || Bltu || Bgeu;
     always @(negedge clk) begin
         if(~rst) pc <= 32'h00000000;
@@ -19,7 +18,6 @@ module IFetch(
             end
             else begin 
                 pc <= pc + 4;
-                index <=4'b0;
             end
         end
     end
