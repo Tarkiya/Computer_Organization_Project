@@ -6,7 +6,7 @@ module Controller (
     output reg [1:0]ALUOp,
     output reg ALUSrc,
     output reg RegWrite,
-    output Ecall,
+    output reg Ecall,
     output MemRead,
     output MemWrite,
     output Branch,nBranch,Blt,Bge,Bltu,Bgeu,Lb,Lbu,
@@ -26,70 +26,91 @@ module Controller (
     assign Sw = (inst[6:0] == 7'b0100011);
     assign Lb= inst[6:0] == 7'b0000011 && inst[14:12] ==3'b0;
     assign Lbu= inst[6:0] == 7'b0000011 && inst[14:12] ==3'b100;
-    assign Ecall = (button[0]==1'b0 && inst[31:0] == 32'h00000073);
     assign MemRead  = (inst[6:0] == 7'b0000011);
     assign MemWrite = ((Sw == 1) && (Alu_resultHigh[21:0] != 22'h3FFFFF)) ? 1'b1:1'b0;
     assign MemorIOtoReg = (IORead || MemRead);
     assign IORead = ((Lw && Alu_resultHigh[21:0] == 22'h3FFFFF)||(inst[31:0] == 32'h00000073 && (Alu_resultLow[3:0] == 4'b0101 || Alu_resultLow[3:0] == 4'b0110)));
     assign IOWrite = (Sw && Alu_resultHigh[21:0] == 22'h3FFFFF||(inst[31:0] == 32'h00000073 && (Alu_resultLow[3:0] == 4'b0001)));
 
-always @* begin
-    case(inst[6:0])
-        7'b1100011:
-            begin
-            ALUOp = 2'b01;
-            ALUSrc = 1'b0;
-            RegWrite = 1'b0; //B bne blt
+    reg flag = 1'b0;
+    
+    always @(*) begin
+        if(button[0]==1'b0 && inst[31:0] == 32'h00000073) begin
+            if(flag == 1'b0) begin
+                Ecall = 1'b1;
+                flag = 1'b1;
             end
-        7'b0110011: 
-            begin
-            ALUOp = 2'b10;
-            ALUSrc = 1'b0;
-            RegWrite = 1'b1; //R add
+            else begin
+                Ecall = 1'b0;
             end
-        7'b0010011: 
-            begin
-            ALUOp = 2'b00; 
-            ALUSrc = 1'b1; 
-            RegWrite = 1'b1; //I addi
-            end
-        7'b0000011:
-            begin
-            ALUOp = 2'b00;
-            ALUSrc = 1'b1;
-            RegWrite = 1'b1; //I lw
-            end
-        7'b0100011: 
-            begin
-            ALUOp = 2'b00;
-            ALUSrc = 1'b1;
-            RegWrite = 1'b0; //S sw
-            end
-        7'b0110111: 
-            begin
-            ALUOp = 2'b00;
-            ALUSrc = 1'b0;
-            RegWrite = 1'b1; //U lui
-            end
-        7'b1101111: 
-            begin
-            ALUOp = 2'b00;
-            ALUSrc = 1'b0;
-            RegWrite = 1'b1; //J jal
-            end
-        7'b1110011:
-            begin
-            ALUOp = 2'b00;
-            ALUSrc = 1'b0;
-            RegWrite = 1'b1; //ecall
-            end
-        default:
-            begin
-            ALUOp = 2'b00;
-            ALUSrc = 1'b1;
-            RegWrite = 1'b1;
-            end
-    endcase
-end
+        end
+        else if(inst[31:0] != 32'h00000073) begin
+            Ecall = 1'b0;
+            flag = 1'b0;
+        end
+        else begin
+            Ecall = 1'b0;
+        end
+    end
+
+    always @(*) begin
+        case(inst[6:0])
+            7'b1100011:
+                begin
+                ALUOp = 2'b01;
+                ALUSrc = 1'b0;
+                RegWrite = 1'b0; //B bne blt
+                end
+            7'b0110011: 
+                begin
+                ALUOp = 2'b10;
+                ALUSrc = 1'b0;
+                RegWrite = 1'b1; //R add
+                end
+            7'b0010011: 
+                begin
+                ALUOp = 2'b00; 
+                ALUSrc = 1'b1; 
+                RegWrite = 1'b1; //I addi
+                end
+            7'b0000011:
+                begin
+                ALUOp = 2'b00;
+                ALUSrc = 1'b1;
+                RegWrite = 1'b1; //I lw
+                end
+            7'b0100011: 
+                begin
+                ALUOp = 2'b00;
+                ALUSrc = 1'b1;
+                RegWrite = 1'b0; //S sw
+                end
+            7'b0110111: 
+                begin
+                ALUOp = 2'b00;
+                ALUSrc = 1'b0;
+                RegWrite = 1'b1; //U lui
+                end
+            7'b1101111: 
+                begin
+                ALUOp = 2'b00;
+                ALUSrc = 1'b0;
+                RegWrite = 1'b1; //J jal
+                end
+            7'b1110011:
+                begin
+                ALUOp = 2'b00;
+                ALUSrc = 1'b0;
+                if(Alu_resultLow == 4'b0101 || Alu_resultLow == 4'b0110) RegWrite = 1'b1;
+                else if(Alu_resultLow == 4'b0001) RegWrite = 1'b0;//ecall
+                end
+            default:
+                begin
+                ALUOp = 2'b00;
+                ALUSrc = 1'b1;
+                RegWrite = 1'b1;
+                end
+        endcase
+    end
 
 endmodule

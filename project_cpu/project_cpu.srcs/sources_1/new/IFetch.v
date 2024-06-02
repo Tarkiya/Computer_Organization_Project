@@ -5,10 +5,11 @@ module IFetch(
     input result,
     input Ecall,
     input Branch,nBranch,Blt,Bge,Bltu,Bgeu,
-    output [31:0] inst
+    output reg [31:0] inst
     );
-    reg [31:0] pc;
     wire Bran;
+    wire [31:0] insto;
+    reg [31:0] pc;
     assign Bran = Branch || nBranch || Blt || Bge || Bltu || Bgeu;
     always @(negedge clk) begin
         if(~rst) pc <= 32'h00000000;
@@ -22,9 +23,12 @@ module IFetch(
             else pc <= pc + 4;
         end
     end
+    always @(posedge clk) begin
+        inst = insto;
+    end
     inst_memory uinst(
         .clka(clk),
         .addra(pc>>2),
-        .douta(inst)
+        .douta(insto)
     );
 endmodule

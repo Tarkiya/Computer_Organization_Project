@@ -21,11 +21,6 @@ module top(
         .clk_in1(clkIn),
         .clk_out1(cpuClk)
     );
-//    clock_clk uclkclk(
-//        .clk_in(clkIn),
-//        .rst(rst),
-//        .clk_out(cpuClk)
-//    );
     clock_div usegclk(
         .clk(clkIn),
         .clk_2ms(segClk)
@@ -35,6 +30,7 @@ module top(
     /////////////////////////////////////////////////////////////
     wire [31:0] imm32;
     wire [31:0] inst;
+    wire [31:0] pc;
     wire result;
     wire Ecall;
     wire Branch,nBranch,Blt,Bge,Bltu,Bgeu;
@@ -113,8 +109,8 @@ module top(
     // ALU Ä£¿é
     /////////////////////////////////////////////////////////////
     ALU uAlu(
-        .ReadData1(ReadData1),
-        .ReadData2(ReadData2),
+        .ReadData1(ReadData2),
+        .ReadData2(ReadData1),
         .Imm32(imm32),
         .ALUOp(ALUOp), 
         .Funct3(inst[14:12]), 
