@@ -1,6 +1,5 @@
 module Decoder(
     input clk,rst,
-    input ecall,
     input regWrite,
     input [31:0] inst,
     input [31:0] writeData,

@@ -1,5 +1,4 @@
 module MemOrIO(
-    input ecall,
     input mRead,
     input mWrite,
     input ioRead,
@@ -23,10 +22,7 @@ module MemOrIO(
     
     // 从 memory 或 IO 读入数据，写入寄存器
     always @(*) begin
-        if(ecall == 1'b1) begin
-            r_wdata = io_rdata;
-        end
-        else if(memIOtoReg == 1'b0) begin
+        if(memIOtoReg == 1'b0) begin
             r_wdata = alu_data;
         end
         else begin
@@ -52,23 +48,15 @@ module MemOrIO(
     
     // 从寄存器读入数据，写入 memory 或者 io
     always @(*) begin
-        if(ecall == 1'b1) begin
-            case(alu_data[3:0])
-                4'b0001: io_wdata = r_rdata;
-//                4'b0010:
-            endcase
+        if(mWrite == 1'b1) begin 
+            m_wdata = r_rdata;
+        end
+        else if(ioWrite == 1'b1) begin
+            io_wdata = r_rdata;
         end
         else begin
-            if(mWrite == 1'b1) begin 
-                m_wdata = r_rdata;
-            end
-            else if(ioWrite == 1'b1) begin
-                io_wdata = r_rdata;
-            end
-            else begin
-                m_wdata = 32'hZZZZZZZZ;
-                io_wdata = 32'hZZZZZZZZ;
-            end
+            m_wdata = 32'hZZZZZZZZ;
+            io_wdata = 32'hZZZZZZZZ;
         end
     end
 endmodule
