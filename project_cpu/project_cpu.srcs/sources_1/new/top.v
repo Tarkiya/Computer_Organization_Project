@@ -23,6 +23,7 @@ module top(
     );
     clock_div usegclk(
         .clk(clkIn),
+        .rst(rst),
         .clk_2ms(segClk)
     );
     

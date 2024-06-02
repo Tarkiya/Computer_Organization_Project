@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Sun Jun  2 02:11:03 2024
--- Host        : LAPTOP-END1HUJS running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top inst_memory -prefix
---               inst_memory_ inst_memory_sim_netlist.vhdl
+-- Date        : Sun Jun  2 19:58:58 2024
+-- Host        : jim running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/ip/inst_memory/inst_memory_sim_netlist.vhdl
 -- Design      : inst_memory
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,6 +19,8 @@ entity inst_memory_bindec is
     ena_array : out STD_LOGIC_VECTOR ( 1 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of inst_memory_bindec : entity is "bindec";
 end inst_memory_bindec;
 
 architecture STRUCTURE of inst_memory_bindec is
@@ -76,6 +78,8 @@ entity inst_memory_blk_mem_gen_mux is
     \DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram_19\ : in STD_LOGIC_VECTOR ( 7 downto 0 );
     \DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram_20\ : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of inst_memory_blk_mem_gen_mux : entity is "blk_mem_gen_mux";
 end inst_memory_blk_mem_gen_mux;
 
 architecture STRUCTURE of inst_memory_blk_mem_gen_mux is
@@ -465,6 +469,8 @@ entity inst_memory_blk_mem_gen_prim_wrapper_init is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of inst_memory_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
 end inst_memory_blk_mem_gen_prim_wrapper_init;
 
 architecture STRUCTURE of inst_memory_blk_mem_gen_prim_wrapper_init is
@@ -487,7 +493,7 @@ begin
       INITP_05 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_06 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_07 => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"0000000000000000000000000000000000000000000000000000000000007FFF",
+      INIT_00 => X"000000000000000000000000000000000000000000000000000000000001FFFF",
       INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -653,7 +659,7 @@ begin
       INITP_0D => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0E => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0F => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"0000000000000000000000000000000000000000000000000000000015555555",
+      INIT_00 => X"0000000000000000000000000000000000000000000000000000000155555555",
       INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -897,7 +903,7 @@ begin
       INITP_0D => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0E => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0F => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"000000000000000000000000000000000000000000000000000000002AAAAAAA",
+      INIT_00 => X"00000000000000000000000000000000000000000000000000000002AAAAAAAA",
       INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -2131,7 +2137,7 @@ begin
       INITP_0D => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0E => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0F => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"0000000000000000000000000000000000034429034429190344150344010101",
+      INIT_00 => X"0000000000000000000000000000000344290344034429190344150344010101",
       INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -3125,7 +3131,7 @@ begin
       DOB_REG => 0,
       EN_ECC_READ => false,
       EN_ECC_WRITE => false,
-      INITP_00 => X"0000000000000000000000000000000000000000000000000000000000000048",
+      INITP_00 => X"0000000000000000000000000000000000000000000000000000000000001048",
       INITP_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -3141,7 +3147,7 @@ begin
       INITP_0D => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0E => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0F => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"000000000000000000000000000000000000400C00400A140040140040000000",
+      INIT_00 => X"00000000000000000000000000000000400C004000400A140040140040000000",
       INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -4087,6 +4093,8 @@ entity inst_memory_blk_mem_gen_prim_width is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of inst_memory_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end inst_memory_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of inst_memory_blk_mem_gen_prim_width is
@@ -4478,6 +4486,8 @@ entity inst_memory_blk_mem_gen_generic_cstr is
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 );
     clka : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of inst_memory_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end inst_memory_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of inst_memory_blk_mem_gen_generic_cstr is
@@ -4922,6 +4932,8 @@ entity inst_memory_blk_mem_gen_top is
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 );
     clka : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of inst_memory_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end inst_memory_blk_mem_gen_top;
 
 architecture STRUCTURE of inst_memory_blk_mem_gen_top is
@@ -4943,6 +4955,8 @@ entity inst_memory_blk_mem_gen_v8_4_1_synth is
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 );
     clka : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of inst_memory_blk_mem_gen_v8_4_1_synth : entity is "blk_mem_gen_v8_4_1_synth";
 end inst_memory_blk_mem_gen_v8_4_1_synth;
 
 architecture STRUCTURE of inst_memory_blk_mem_gen_v8_4_1_synth is
@@ -5170,6 +5184,8 @@ entity inst_memory_blk_mem_gen_v8_4_1 is
   attribute C_WRITE_WIDTH_B of inst_memory_blk_mem_gen_v8_4_1 : entity is 32;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of inst_memory_blk_mem_gen_v8_4_1 : entity is "artix7";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of inst_memory_blk_mem_gen_v8_4_1 : entity is "blk_mem_gen_v8_4_1";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of inst_memory_blk_mem_gen_v8_4_1 : entity is "yes";
 end inst_memory_blk_mem_gen_v8_4_1;

@@ -1,4 +1,5 @@
 module clock_div(
+    input rst,
     input clk,
     output reg clk_2ms
     );
@@ -8,12 +9,17 @@ module clock_div(
 
     always@(posedge clk)//2ms
       begin
-        if(cnt_2ms==31'd100000)
+      if(~rst) begin
+        clk_2ms<=1'b0;
+      end
+      else begin
+        if(cnt_2ms==31'd10000)
         begin
           clk_2ms<=~clk_2ms;
           cnt_2ms<=0;
         end
-      else cnt_2ms<=cnt_2ms+1;
+        else cnt_2ms<=cnt_2ms+1;
+        end
       end
 
 endmodule

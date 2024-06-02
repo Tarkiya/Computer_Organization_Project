@@ -14,18 +14,18 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9924 
+INFO: Helper process launched with PID 20048 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 343.527 ; gain = 100.980
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 343.598 ; gain = 101.605
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/top.v:1]
-INFO: [Synth 8-638] synthesizing module 'clock_cpu' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/realtime/clock_cpu_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'clock_cpu' (1#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/realtime/clock_cpu_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'clock_cpu' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/realtime/clock_cpu_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clock_cpu' (1#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/realtime/clock_cpu_stub.v:5]
 INFO: [Synth 8-638] synthesizing module 'clock_div' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/clock_div.v:1]
 INFO: [Synth 8-256] done synthesizing module 'clock_div' (2#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/clock_div.v:1]
 INFO: [Synth 8-638] synthesizing module 'IFetch' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:1]
-INFO: [Synth 8-638] synthesizing module 'inst_memory' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/realtime/inst_memory_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'inst_memory' (3#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/realtime/inst_memory_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'inst_memory' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/realtime/inst_memory_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'inst_memory' (3#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/realtime/inst_memory_stub.v:6]
 WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (14) of module 'inst_memory' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:31]
 INFO: [Synth 8-256] done synthesizing module 'IFetch' (4#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/IFetch.v:1]
 INFO: [Synth 8-638] synthesizing module 'Controller' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/control.v:1]
@@ -36,8 +36,8 @@ INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/yjc/OneDrive/Desktop/csp
 WARNING: [Synth 8-151] case item 4'b1111 is unreachable [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:48]
 INFO: [Synth 8-256] done synthesizing module 'ALU' (7#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/ALU.v:1]
 INFO: [Synth 8-638] synthesizing module 'm_data' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/m_data.v:1]
-INFO: [Synth 8-638] synthesizing module 'data_memory' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/realtime/data_memory_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'data_memory' (8#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/realtime/data_memory_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'data_memory' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/realtime/data_memory_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'data_memory' (8#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/realtime/data_memory_stub.v:6]
 INFO: [Synth 8-256] done synthesizing module 'm_data' (9#1) [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/m_data.v:1]
 INFO: [Synth 8-638] synthesizing module 'MemOrIO' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:1]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/MemOrIO.v:56]
@@ -88,7 +88,7 @@ WARNING: [Synth 8-3331] design Controller has unconnected port button[3]
 WARNING: [Synth 8-3331] design Controller has unconnected port button[2]
 WARNING: [Synth 8-3331] design Controller has unconnected port button[1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 396.195 ; gain = 153.648
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 396.324 ; gain = 154.332
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -98,19 +98,19 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 396.195 ; gain = 153.648
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 396.324 ; gain = 154.332
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp3/clk_wiz_0_in_context.xdc] for cell 'ucpuclk'
-Finished Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp3/clk_wiz_0_in_context.xdc] for cell 'ucpuclk'
-Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp4/inst_memory_in_context.xdc] for cell 'uIFetch/uinst'
-Finished Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp4/inst_memory_in_context.xdc] for cell 'uIFetch/uinst'
-Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp5/data_memory_in_context.xdc] for cell 'udata/udata'
-Finished Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp5/data_memory_in_context.xdc] for cell 'udata/udata'
+Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/dcp3/clk_wiz_0_in_context.xdc] for cell 'ucpuclk'
+Finished Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/dcp3/clk_wiz_0_in_context.xdc] for cell 'ucpuclk'
+Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/dcp4/inst_memory_in_context.xdc] for cell 'uIFetch/uinst'
+Finished Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/dcp4/inst_memory_in_context.xdc] for cell 'uIFetch/uinst'
+Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/dcp5/data_memory_in_context.xdc] for cell 'udata/udata'
+Finished Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/dcp5/data_memory_in_context.xdc] for cell 'udata/udata'
 Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc]
 Finished Parsing XDC File [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/constrs_1/new/constr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
@@ -122,27 +122,27 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 740.055 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 737.801 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 740.055 ; gain = 497.508
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 737.801 ; gain = 495.809
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 740.055 ; gain = 497.508
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 737.801 ; gain = 495.809
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clkIn. (constraint file  C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp3/clk_wiz_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clkIn. (constraint file  C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-48188-jim/dcp3/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clkIn. (constraint file  C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/dcp3/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clkIn. (constraint file  C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/.Xil/Vivado-40496-jim/dcp3/clk_wiz_0_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for uIFetch/uinst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for ucpuclk. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for udata/udata. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 740.055 ; gain = 497.508
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 737.801 ; gain = 495.809
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "clk_2ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "cnt_2ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -218,7 +218,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'seg_ctrr_reg' [C:/Users/yjc
 WARNING: [Synth 8-327] inferring latch for variable 'ledLeft_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:10]
 WARNING: [Synth 8-327] inferring latch for variable 'ledRight_reg' [C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.srcs/sources_1/new/led.v:11]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 740.055 ; gain = 497.508
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 737.801 ; gain = 495.809
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -248,7 +248,7 @@ Detailed RTL Component Info :
 	   8 Input      4 Bit        Muxes := 1     
 	   8 Input      3 Bit        Muxes := 1     
 	   9 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 40    
+	   2 Input      1 Bit        Muxes := 39    
 	   9 Input      1 Bit        Muxes := 3     
 	   3 Input      1 Bit        Muxes := 2     
 	   6 Input      1 Bit        Muxes := 1     
@@ -320,8 +320,8 @@ Detailed RTL Component Info :
 	  15 Input      8 Bit        Muxes := 1     
 	   8 Input      4 Bit        Muxes := 1     
 	   8 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
 	  14 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -491,7 +491,7 @@ WARNING: [Synth 8-3332] Sequential element (debouncer3/q2_reg) is unused and wil
 WARNING: [Synth 8-3332] Sequential element (debouncer4/q1_reg) is unused and will be removed from module top.
 WARNING: [Synth 8-3332] Sequential element (debouncer4/q2_reg) is unused and will be removed from module top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 740.055 ; gain = 497.508
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 737.801 ; gain = 495.809
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -505,13 +505,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'ucpuclk/clk_out1' to pin 'ucpuclk/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 757.031 ; gain = 514.484
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 758.691 ; gain = 516.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 912.426 ; gain = 669.879
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 910.699 ; gain = 668.707
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -568,7 +568,7 @@ WARNING: [Synth 8-3332] Sequential element (uDecoder/register_reg[0][21]) is unu
 WARNING: [Synth 8-3332] Sequential element (uDecoder/register_reg[0][20]) is unused and will be removed from module top.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 912.426 ; gain = 669.879
+Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 910.699 ; gain = 668.707
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -592,7 +592,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 910.699 ; gain = 668.707
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -605,7 +605,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 910.699 ; gain = 668.707
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -617,25 +617,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 910.699 ; gain = 668.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 910.699 ; gain = 668.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 910.699 ; gain = 668.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 910.699 ; gain = 668.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -660,9 +660,9 @@ Report Cell Usage:
 |4     |BUFG        |     2|
 |5     |CARRY4      |    28|
 |6     |LUT1        |     6|
-|7     |LUT2        |    78|
-|8     |LUT3        |    98|
-|9     |LUT4        |   144|
+|7     |LUT2        |    75|
+|8     |LUT3        |    99|
+|9     |LUT4        |   145|
 |10    |LUT5        |   155|
 |11    |LUT6        |   875|
 |12    |MUXF7       |   304|
@@ -678,12 +678,12 @@ Report Instance Areas:
 +------+-------------+-----------+------+
 |      |Instance     |Module     |Cells |
 +------+-------------+-----------+------+
-|1     |top          |           |  3054|
+|1     |top          |           |  3053|
 |2     |  debouncer0 |debouncer  |     3|
 |3     |  uAlu       |ALU        |    17|
 |4     |  uContrl    |Controller |     2|
 |5     |  uDecoder   |Decoder    |  2297|
-|6     |  uIFetch    |IFetch     |   414|
+|6     |  uIFetch    |IFetch     |   413|
 |7     |  uMemOrIO   |MemOrIO    |    76|
 |8     |  udata      |m_data     |    32|
 |9     |  uled       |led        |    16|
@@ -692,11 +692,11 @@ Report Instance Areas:
 |12    |  uswitch    |switch     |    16|
 +------+-------------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 910.699 ; gain = 668.707
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 167 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 912.426 ; gain = 326.020
-Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 912.426 ; gain = 669.879
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 910.699 ; gain = 327.230
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 910.699 ; gain = 668.707
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 501 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -711,8 +711,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 191 Infos, 152 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:50 . Memory (MB): peak = 912.426 ; gain = 681.414
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 910.699 ; gain = 680.191
 INFO: [Common 17-1381] The checkpoint 'C:/Users/yjc/OneDrive/Desktop/csprojects/cpu/Computer_Organization_Project/project_cpu/project_cpu.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 912.426 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Jun  2 19:31:27 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 910.699 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Jun  2 20:26:03 2024...
